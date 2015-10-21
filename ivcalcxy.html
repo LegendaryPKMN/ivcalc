@@ -1318,6 +1318,7 @@ function display_sprite() { //feel free to modify if you want to server sprites 
 			if (alt[n]) {
 				m = alt[n];
 			}
+			n = Math.floor(n);
 			if (m < 10) {
 				n = '0'+n;
 				m = n;
@@ -1326,7 +1327,7 @@ function display_sprite() { //feel free to modify if you want to server sprites 
 				n = '0'+n;
 				m = n;
 			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(m > 0?Math.floor(n)+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(m > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
 			(mode==1 && act >-1?'pokedex-xy/icon/'+m+'.png':'xy/pokemon/'+m+'.png')+'" alt="'+n+'" /></a>';
 			i++;
 		} while(i<l);
