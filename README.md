@@ -16,8 +16,8 @@ It's written in JavaScript to ensure cross-system compatibility. It is a small s
 ##Version History
 
 ####Version 1.2+/ja (31/August/2015)
-    re-translated from [Japanese version](http://pokemonwiki.com/status/ivcalc.html) on ポケモンWiki by 2nd-player.
-    Added Hoopa Unbound, Pimal Pokémons, new Mega Evolutions from ORAS.
+    re-translated from Japanese version on ポケモンWiki by 2nd-player.
+    Added Hoopa Unbound, Primal Pokémons, new Mega Evolutions from ORAS.
 ####Version 1.2 (20/September/2014)
     Added remaining event Pokémon and forms from X/Y.
 ####Version 1.1 (20/November/2013)
