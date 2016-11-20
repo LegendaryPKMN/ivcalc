@@ -13,6 +13,8 @@ It's written in JavaScript to ensure cross-system compatibility. It is a small s
 
 ##Version History
 
+####Version 1.4+/ja (11/November/2016)
+    Update for Sun/Moon.
 ####Version 1.4 (15/September/2016)
     Rebranding for LegendaryPKMN .net.
 ####Version 1.3 (09/September/2016)	
