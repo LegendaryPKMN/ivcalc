@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- 
+<!--
 This program has been written by Heracles Papatheodorou a.k.a Arty2, webmaster of LegendaryPKMN.net
-You can contact the author via email: contact {at} legendarypkmn {dot} net
+You can contact the author via email: contact {at} LegendaryPKMN {dot} net
 
 Please pardon the code mess that follows since it's always a work in progress :]
 Be my guest if you think you can improve one of the following algorithms; I am not a programmer by profession.
@@ -12,7 +12,7 @@ I tried to provide subtle documentation here and there; the complex parts are at
 Source is uncompressed, for educational (?) purposes.
 
 
-The latest version of this program can be always found at http://legendarypkmn.github.io/ivcalcxy.html 
+The latest version of this program can always be found at https://legendarypkmn.github.io/ivcalcxy.html
 -->
 <title>XY Individual Value &amp; Stat Calculator - LegendaryPKMN.net</title>
 <meta name="Author" content="Heracles Papatheodorou" />
@@ -69,7 +69,7 @@ body {
 	text-align: left;
 	width: 100%;
 }
-#calculator optgroup { 
+#calculator optgroup {
 	font-weight: bold;
 	margin: 4px 0 0 0;
 }
@@ -205,7 +205,7 @@ body {
 	text-align: center !important;
 	vertical-align: middle !important;
 }
-#calculator .right { 
+#calculator .right {
 	text-align: right !important;
 	vertical-align: top !important;
 	padding-right: 6px !important;
@@ -238,6 +238,10 @@ body {
 #calculator .new {
 	background: #eee;
 	color: #000;
+}
+#calculator #sprite img {
+	max-height: 120px;
+	max-width: 120px;
 }
 
 /* SPP Theme */
@@ -295,12 +299,12 @@ body {
 	padding-bottom: 1em;
 }
 #calculator .block { width: 100%; }
-#calculator #controls, #documentation, #btn-addeps, #times, $name, #charn { display: none; }
+#calculator #controls, #documentation, #btn-addeps, #times, #name, #charn { display: none; }
 #calculator h2 { border-bottom: 1px solid #000 !important; }
 </style>
 <style type="text/css" id="thema">/* required for the "Colorize" functionality */</style>
 </head>
-<body> 
+<body>
 <div id="calculator"> <!-- Start here if you want to include this in your page -->
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
@@ -501,7 +505,7 @@ Array.prototype.unique = function() {
 
 /* Pokemon Data and retrieval functions */
 //Pokemon Name:Number - email the author for a precompiled list of the names in other languages
-pkmns='Bulbasaur:1|Ivysaur:2|Venusaur:3|Charmander:4|Charmeleon:5|Charizard:6|Squirtle:7|Wartortle:8|Blastoise:9|Caterpie:10|Metapod:11|Butterfree:12|Weedle:13|Kakuna:14|Beedrill:15|Pidgey:16|Pidgeotto:17|Pidgeot:18|Rattata:19|Raticate:20|Spearow:21|Fearow:22|Ekans:23|Arbok:24|Pikachu:25|Raichu:26|Sandshrew:27|Sandslash:28|Nidoran♀:29|Nidorina:30|Nidoqueen:31|Nidoran♂:32|Nidorino:33|Nidoking:34|Clefairy:35|Clefable:36|Vulpix:37|Ninetales:38|Jigglypuff:39|Wigglytuff:40|Zubat:41|Golbat:42|Oddish:43|Gloom:44|Vileplume:45|Paras:46|Parasect:47|Venonat:48|Venomoth:49|Diglett:50|Dugtrio:51|Meowth:52|Persian:53|Psyduck:54|Golduck:55|Mankey:56|Primeape:57|Growlithe:58|Arcanine:59|Poliwag:60|Poliwhirl:61|Poliwrath:62|Abra:63|Kadabra:64|Alakazam:65|Machop:66|Machoke:67|Machamp:68|Bellsprout:69|Weepinbell:70|Victreebel:71|Tentacool:72|Tentacruel:73|Geodude:74|Graveler:75|Golem:76|Ponyta:77|Rapidash:78|Slowpoke:79|Slowbro:80|Magnemite:81|Magneton:82|Farfetch’d:83|Doduo:84|Dodrio:85|Seel:86|Dewgong:87|Grimer:88|Muk:89|Shellder:90|Cloyster:91|Gastly:92|Haunter:93|Gengar:94|Onix:95|Drowzee:96|Hypno:97|Krabby:98|Kingler:99|Voltorb:100|Electrode:101|Exeggcute:102|Exeggutor:103|Cubone:104|Marowak:105|Hitmonlee:106|Hitmonchan:107|Lickitung:108|Koffing:109|Weezing:110|Rhyhorn:111|Rhydon:112|Chansey:113|Tangela:114|Kangaskhan:115|Horsea:116|Seadra:117|Goldeen:118|Seaking:119|Staryu:120|Starmie:121|Mr. Mime:122|Scyther:123|Jynx:124|Electabuzz:125|Magmar:126|Pinsir:127|Tauros:128|Magikarp:129|Gyarados:130|Lapras:131|Ditto:132|Eevee:133|Vaporeon:134|Jolteon:135|Flareon:136|Porygon:137|Omanyte:138|Omastar:139|Kabuto:140|Kabutops:141|Aerodactyl:142|Snorlax:143|Articuno:144|Zapdos:145|Moltres:146|Dratini:147|Dragonair:148|Dragonite:149|Mewtwo:150|Mew:151|Chikorita:152|Bayleef:153|Meganium:154|Cyndaquil:155|Quilava:156|Typhlosion:157|Totodile:158|Croconaw:159|Feraligatr:160|Sentret:161|Furret:162|Hoothoot:163|Noctowl:164|Ledyba:165|Ledian:166|Spinarak:167|Ariados:168|Crobat:169|Chinchou:170|Lanturn:171|Pichu:172|Cleffa:173|Igglybuff:174|Togepi:175|Togetic:176|Natu:177|Xatu:178|Mareep:179|Flaaffy:180|Ampharos:181|Bellossom:182|Marill:183|Azumarill:184|Sudowoodo:185|Politoed:186|Hoppip:187|Skiploom:188|Jumpluff:189|Aipom:190|Sunkern:191|Sunflora:192|Yanma:193|Wooper:194|Quagsire:195|Espeon:196|Umbreon:197|Murkrow:198|Slowking:199|Misdreavus:200|Unown:201|Wobbuffet:202|Girafarig:203|Pineco:204|Forretress:205|Dunsparce:206|Gligar:207|Steelix:208|Snubbull:209|Granbull:210|Qwilfish:211|Scizor:212|Shuckle:213|Heracross:214|Sneasel:215|Teddiursa:216|Ursaring:217|Slugma:218|Magcargo:219|Swinub:220|Piloswine:221|Corsola:222|Remoraid:223|Octillery:224|Delibird:225|Mantine:226|Skarmory:227|Houndour:228|Houndoom:229|Kingdra:230|Phanpy:231|Donphan:232|Porygon2:233|Stantler:234|Smeargle:235|Tyrogue:236|Hitmontop:237|Smoochum:238|Elekid:239|Magby:240|Miltank:241|Blissey:242|Raikou:243|Entei:244|Suicune:245|Larvitar:246|Pupitar:247|Tyranitar:248|Lugia:249|Ho-oh:250|Celebi:251|Treecko:252|Grovyle:253|Sceptile:254|Torchic:255|Combusken:256|Blaziken:257|Mudkip:258|Marshtomp:259|Swampert:260|Poochyena:261|Mightyena:262|Zigzagoon:263|Linoone:264|Wurmple:265|Silcoon:266|Beautifly:267|Cascoon:268|Dustox:269|Lotad:270|Lombre:271|Ludicolo:272|Seedot:273|Nuzleaf:274|Shiftry:275|Taillow:276|Swellow:277|Wingull:278|Pelipper:279|Ralts:280|Kirlia:281|Gardevoir:282|Surskit:283|Masquerain:284|Shroomish:285|Breloom:286|Slakoth:287|Vigoroth:288|Slaking:289|Nincada:290|Ninjask:291|Shedinja:292|Whismur:293|Loudred:294|Exploud:295|Makuhita:296|Hariyama:297|Azurill:298|Nosepass:299|Skitty:300|Delcatty:301|Sableye:302|Mawile:303|Aron:304|Lairon:305|Aggron:306|Meditite:307|Medicham:308|Electrike:309|Manectric:310|Plusle:311|Minun:312|Volbeat:313|Illumise:314|Roselia:315|Gulpin:316|Swalot:317|Carvanha:318|Sharpedo:319|Wailmer:320|Wailord:321|Numel:322|Camerupt:323|Torkoal:324|Spoink:325|Grumpig:326|Spinda:327|Trapinch:328|Vibrava:329|Flygon:330|Cacnea:331|Cacturne:332|Swablu:333|Altaria:334|Zangoose:335|Seviper:336|Lunatone:337|Solrock:338|Barboach:339|Whiscash:340|Corphish:341|Crawdaunt:342|Baltoy:343|Claydol:344|Lileep:345|Cradily:346|Anorith:347|Armaldo:348|Feebas:349|Milotic:350|Castform:351|Kecleon:352|Shuppet:353|Banette:354|Duskull:355|Dusclops:356|Tropius:357|Chimecho:358|Absol:359|Wynaut:360|Snorunt:361|Glalie:362|Spheal:363|Sealeo:364|Walrein:365|Clamperl:366|Huntail:367|Gorebyss:368|Relicanth:369|Luvdisc:370|Bagon:371|Shelgon:372|Salamence:373|Beldum:374|Metang:375|Metagross:376|Regirock:377|Regice:378|Registeel:379|Latias:380|Latios:381|Kyogre:382|Groudon:383|Rayquaza:384|Jirachi:385|Deoxys:386|Turtwig:387|Grotle:388|Torterra:389|Chimchar:390|Monferno:391|Infernape:392|Piplup:393|Prinplup:394|Empoleon:395|Starly:396|Staravia:397|Staraptor:398|Bidoof:399|Bibarel:400|Kricketot:401|Kricketune:402|Shinx:403|Luxio:404|Luxray:405|Budew:406|Roserade:407|Cranidos:408|Rampardos:409|Shieldon:410|Bastiodon:411|Burmy:412|Wormadam .Plant:413|Mothim:414|Combee:415|Vespiquen:416|Pachirisu:417|Buizel:418|Floatzel:419|Cherubi:420|Cherrim:421|Shellos:422|Gastrodon:423|Ambipom:424|Drifloon:425|Drifblim:426|Buneary:427|Lopunny:428|Mismagius:429|Honchkrow:430|Glameow:431|Purugly:432|Chingling:433|Stunky:434|Skuntank:435|Bronzor:436|Bronzong:437|Bonsly:438|Mime Jr.:439|Happiny:440|Chatot:441|Spiritomb:442|Gible:443|Gabite:444|Garchomp:445|Munchlax:446|Riolu:447|Lucario:448|Hippopotas:449|Hippowdon:450|Skorupi:451|Drapion:452|Croagunk:453|Toxicroak:454|Carnivine:455|Finneon:456|Lumineon:457|Mantyke:458|Snover:459|Abomasnow:460|Weavile:461|Magnezone:462|Lickilicky:463|Rhyperior:464|Tangrowth:465|Electivire:466|Magmortar:467|Togekiss:468|Yanmega:469|Leafeon:470|Glaceon:471|Gliscor:472|Mamoswine:473|Porygon-Z:474|Gallade:475|Probopass:476|Dusknoir:477|Froslass:478|Rotom:479|Uxie:480|Mesprit:481|Azelf:482|Dialga:483|Palkia:484|Heatran:485|Regigigas:486|Giratina .Altered:487|Cresselia:488|Phione:489|Manaphy:490|Darkrai:491|Shaymin .Land:492|Arceus:493|Victini:494|Snivy:495|Servine:496|Serperior:497|Tepig:498|Pignite:499|Emboar:500|Oshawott:501|Dewott:502|Samurott:503|Patrat:504|Watchog:505|Lillipup:506|Herdier:507|Stoutland:508|Purrloin:509|Liepard:510|Pansage:511|Simisage:512|Pansear:513|Simisear:514|Panpour:515|Simipour:516|Munna:517|Musharna:518|Pidove:519|Tranquill:520|Unfezant:521|Blitzle:522|Zebstrika:523|Roggenrola:524|Boldore:525|Gigalith:526|Woobat:527|Swoobat:528|Drilbur:529|Excadrill:530|Audino:531|Timburr:532|Gurdurr:533|Conkeldurr:534|Tympole:535|Palpitoad:536|Seismitoad:537|Throh:538|Sawk:539|Sewaddle:540|Swadloon:541|Leavanny:542|Venipede:543|Whirlipede:544|Scolipede:545|Cottonee:546|Whimsicott:547|Petilil:548|Lilligant:549|Basculin .Red:550|Sandile:551|Krokorok:552|Krookodile:553|Darumaka:554|Darmanitan:555|Maractus:556|Dwebble:557|Crustle:558|Scraggy:559|Scrafty:560|Sigilyph:561|Yamask:562|Cofagrigus:563|Tirtouga:564|Carracosta:565|Archen:566|Archeops:567|Trubbish:568|Garbodor:569|Zorua:570|Zoroark:571|Minccino:572|Cinccino:573|Gothita:574|Gothorita:575|Gothitelle:576|Solosis:577|Duosion:578|Reuniclus:579|Ducklett:580|Swanna:581|Vanillite:582|Vanillish:583|Vanilluxe:584|Deerling:585|Sawsbuck:586|Emolga:587|Karrablast:588|Escavalier:589|Foongus:590|Amoonguss:591|Frillish:592|Jellicent:593|Alomomola:594|Joltik:595|Galvantula:596|Ferroseed:597|Ferrothorn:598|Klink:599|Klang:600|Klinklang:601|Tynamo:602|Eelektrik:603|Eelektross:604|Elgyem:605|Beheeyem:606|Litwick:607|Lampent:608|Chandelure:609|Axew:610|Fraxure:611|Haxorus:612|Cubchoo:613|Beartic:614|Cryogonal:615|Shelmet:616|Accelgor:617|Stunfisk:618|Mienfoo:619|Mienshao:620|Druddigon:621|Golett:622|Golurk:623|Pawniard:624|Bisharp:625|Bouffalant:626|Rufflet:627|Braviary:628|Vullaby:629|Mandibuzz:630|Heatmor:631|Durant:632|Deino:633|Zweilous:634|Hydreigon:635|Larvesta:636|Volcarona:637|Cobalion:638|Terrakion:639|Virizion:640|Tornadus:641|Thundurus:642|Reshiram:643|Zekrom:644|Landorus:645|Kyurem:646|Keldeo .Ordinary:647|Meloetta .Aria:648|Genesect:649|Chespin:650|Quilladin:651|Chesnaught:652|Fennekin:653|Braixen:654|Delphox:655|Froakie:656|Frogadier:657|Greninja:658|Bunnelby:659|Diggersby:660|Fletchling:661|Fletchinder:662|Talonflame:663|Scatterbug:664|Spewpa:665|Vivillon:666|Litleo:667|Pyroar:668|Flabébé:669|Floette:670|Florges:671|Skiddo:672|Gogoat:673|Pancham:674|Pangoro:675|Furfrou:676|Espurr:677|Meowstic ♂:678|Honedge:679|Doublade:680|Aegislash:681|Spritzee:682|Aromatisse:683|Swirlix:684|Slurpuff:685|Inkay:686|Malamar:687|Binacle:688|Barbaracle:689|Skrelp:690|Dragalge:691|Clauncher:692|Clawitzer:693|Helioptile:694|Heliolisk:695|Tyrunt:696|Tyrantrum:697|Amaura:698|Aurorus:699|Sylveon:700|Hawlucha:701|Dedenne:702|Carbink:703|Goomy:704|Sliggoo:705|Goodra:706|Klefki:707|Phantump:708|Trevenant:709|Pumpkaboo .Average:710|Gourgeist .Average:711|Bergmite:712|Avalugg:713|Noibat:714|Noivern:715|Xerneas:716|Yveltal:717|Zygarde:718|Diancie:719|Hoopa:720|Volcanion:721|Deoxys .ATK:386.1|Deoxys .DEF:386.2|Deoxys .SPD:386.3|Wormadam .Sandy:413.1|Wormadam .Trash:413.2|Shaymin .Sky:492.1|Giratina .Origin:487.1|Rotom .Heat:479.1|Rotom .Wash:479.2|Rotom .Frost:479.3|Rotom .Fan:479.4|Rotom .Mow:479.5|Castform .Sun:351.1|Castform .Rain:351.2|Castform .Snow:351.3|Basculin .Blue:550.1|Darmanitan .Zen:555.1|Meloetta .Pirouette:648.1|Kyurem .White:646.1|Kyurem .Black:646.2|Keldeo .Resolute:647.1|Tornadus .Therian:641.1|Thundurus .Therian:642.1|Landorus .Therian:645.1|Floette .Eternal:670.1|Meowstic ♀:678.1|Aegislash .Blade:681.1|Pumpkaboo .Small:710.1|Pumpkaboo .Large:710.2|Pumpkaboo .Huge:710.3|Gourgeist .Small:711.1|Gourgeist .Large:711.2|Gourgeist .Huge:711.3|Venusaur .Mega:3.1|Charizard .Mega X:6.1|Charizard .Mega Y:6.2|Blastoise .Mega:9.1|Alakazam .Mega:65.1|Gengar .Mega:94.1|Kangaskhan .Mega:115.1|Pinsir .Mega:127.1|Gyarados .Mega:130.1|Aerodactyl .Mega:142.1|Mewtwo .Mega X:150.1|Mewtwo .Mega Y:150.2|Ampharos .Mega:181.1|Scizor .Mega:212.1|Heracross .Mega:214.1|Houndoom .Mega:229.1|Tyranitar .Mega:248.1|Blaziken .Mega:257.1|Gardevoir .Mega:282.1|Mawile .Mega:303.1|Aggron .Mega:306.1|Medicham .Mega:308.1|Manectric .Mega:310.1|Banette .Mega:354.1|Absol .Mega:359.1|Latias .Mega:380.1|Latios .Mega:381.1|Garchomp .Mega:445.1|Lucario .Mega:448.1|Abomasnow .Mega:460.1|Beedrill .Mega:15.1|Pidgeot .Mega:18.1|Slowbro .Mega:80.1|Steelix .Mega:208.1|Sceptile .Mega:254.1|Swampert .Mega:260.1|Sableye .Mega:302.1|Sharpedo .Mega:319.1|Camerupt .Mega:323.1|Altaria .Mega:334.1|Glalie .Mega:362.1|Salamence .Mega:373.1|Metagross. Mega:376.1|Kyogre. Primal:382.1|Groudon. Primal:383.1|Rayquaza. Mega:384.1|Lopunny. Mega:428.1|Gallade. Mega:475.1|Audino. Mega:531.1|Diancie. Mega:719.1|Hoopa. Unbound:720.1';
+pkmns='Bulbasaur:1|Ivysaur:2|Venusaur:3|Charmander:4|Charmeleon:5|Charizard:6|Squirtle:7|Wartortle:8|Blastoise:9|Caterpie:10|Metapod:11|Butterfree:12|Weedle:13|Kakuna:14|Beedrill:15|Pidgey:16|Pidgeotto:17|Pidgeot:18|Rattata:19|Raticate:20|Spearow:21|Fearow:22|Ekans:23|Arbok:24|Pikachu:25|Raichu:26|Sandshrew:27|Sandslash:28|Nidoran&#9792;:29|Nidorina:30|Nidoqueen:31|Nidoran&#9794;:32|Nidorino:33|Nidoking:34|Clefairy:35|Clefable:36|Vulpix:37|Ninetales:38|Jigglypuff:39|Wigglytuff:40|Zubat:41|Golbat:42|Oddish:43|Gloom:44|Vileplume:45|Paras:46|Parasect:47|Venonat:48|Venomoth:49|Diglett:50|Dugtrio:51|Meowth:52|Persian:53|Psyduck:54|Golduck:55|Mankey:56|Primeape:57|Growlithe:58|Arcanine:59|Poliwag:60|Poliwhirl:61|Poliwrath:62|Abra:63|Kadabra:64|Alakazam:65|Machop:66|Machoke:67|Machamp:68|Bellsprout:69|Weepinbell:70|Victreebel:71|Tentacool:72|Tentacruel:73|Geodude:74|Graveler:75|Golem:76|Ponyta:77|Rapidash:78|Slowpoke:79|Slowbro:80|Magnemite:81|Magneton:82|Farfetch’d:83|Doduo:84|Dodrio:85|Seel:86|Dewgong:87|Grimer:88|Muk:89|Shellder:90|Cloyster:91|Gastly:92|Haunter:93|Gengar:94|Onix:95|Drowzee:96|Hypno:97|Krabby:98|Kingler:99|Voltorb:100|Electrode:101|Exeggcute:102|Exeggutor:103|Cubone:104|Marowak:105|Hitmonlee:106|Hitmonchan:107|Lickitung:108|Koffing:109|Weezing:110|Rhyhorn:111|Rhydon:112|Chansey:113|Tangela:114|Kangaskhan:115|Horsea:116|Seadra:117|Goldeen:118|Seaking:119|Staryu:120|Starmie:121|Mr. Mime:122|Scyther:123|Jynx:124|Electabuzz:125|Magmar:126|Pinsir:127|Tauros:128|Magikarp:129|Gyarados:130|Lapras:131|Ditto:132|Eevee:133|Vaporeon:134|Jolteon:135|Flareon:136|Porygon:137|Omanyte:138|Omastar:139|Kabuto:140|Kabutops:141|Aerodactyl:142|Snorlax:143|Articuno:144|Zapdos:145|Moltres:146|Dratini:147|Dragonair:148|Dragonite:149|Mewtwo:150|Mew:151|Chikorita:152|Bayleef:153|Meganium:154|Cyndaquil:155|Quilava:156|Typhlosion:157|Totodile:158|Croconaw:159|Feraligatr:160|Sentret:161|Furret:162|Hoothoot:163|Noctowl:164|Ledyba:165|Ledian:166|Spinarak:167|Ariados:168|Crobat:169|Chinchou:170|Lanturn:171|Pichu:172|Cleffa:173|Igglybuff:174|Togepi:175|Togetic:176|Natu:177|Xatu:178|Mareep:179|Flaaffy:180|Ampharos:181|Bellossom:182|Marill:183|Azumarill:184|Sudowoodo:185|Politoed:186|Hoppip:187|Skiploom:188|Jumpluff:189|Aipom:190|Sunkern:191|Sunflora:192|Yanma:193|Wooper:194|Quagsire:195|Espeon:196|Umbreon:197|Murkrow:198|Slowking:199|Misdreavus:200|Unown:201|Wobbuffet:202|Girafarig:203|Pineco:204|Forretress:205|Dunsparce:206|Gligar:207|Steelix:208|Snubbull:209|Granbull:210|Qwilfish:211|Scizor:212|Shuckle:213|Heracross:214|Sneasel:215|Teddiursa:216|Ursaring:217|Slugma:218|Magcargo:219|Swinub:220|Piloswine:221|Corsola:222|Remoraid:223|Octillery:224|Delibird:225|Mantine:226|Skarmory:227|Houndour:228|Houndoom:229|Kingdra:230|Phanpy:231|Donphan:232|Porygon2:233|Stantler:234|Smeargle:235|Tyrogue:236|Hitmontop:237|Smoochum:238|Elekid:239|Magby:240|Miltank:241|Blissey:242|Raikou:243|Entei:244|Suicune:245|Larvitar:246|Pupitar:247|Tyranitar:248|Lugia:249|Ho-oh:250|Celebi:251|Treecko:252|Grovyle:253|Sceptile:254|Torchic:255|Combusken:256|Blaziken:257|Mudkip:258|Marshtomp:259|Swampert:260|Poochyena:261|Mightyena:262|Zigzagoon:263|Linoone:264|Wurmple:265|Silcoon:266|Beautifly:267|Cascoon:268|Dustox:269|Lotad:270|Lombre:271|Ludicolo:272|Seedot:273|Nuzleaf:274|Shiftry:275|Taillow:276|Swellow:277|Wingull:278|Pelipper:279|Ralts:280|Kirlia:281|Gardevoir:282|Surskit:283|Masquerain:284|Shroomish:285|Breloom:286|Slakoth:287|Vigoroth:288|Slaking:289|Nincada:290|Ninjask:291|Shedinja:292|Whismur:293|Loudred:294|Exploud:295|Makuhita:296|Hariyama:297|Azurill:298|Nosepass:299|Skitty:300|Delcatty:301|Sableye:302|Mawile:303|Aron:304|Lairon:305|Aggron:306|Meditite:307|Medicham:308|Electrike:309|Manectric:310|Plusle:311|Minun:312|Volbeat:313|Illumise:314|Roselia:315|Gulpin:316|Swalot:317|Carvanha:318|Sharpedo:319|Wailmer:320|Wailord:321|Numel:322|Camerupt:323|Torkoal:324|Spoink:325|Grumpig:326|Spinda:327|Trapinch:328|Vibrava:329|Flygon:330|Cacnea:331|Cacturne:332|Swablu:333|Altaria:334|Zangoose:335|Seviper:336|Lunatone:337|Solrock:338|Barboach:339|Whiscash:340|Corphish:341|Crawdaunt:342|Baltoy:343|Claydol:344|Lileep:345|Cradily:346|Anorith:347|Armaldo:348|Feebas:349|Milotic:350|Castform:351|Kecleon:352|Shuppet:353|Banette:354|Duskull:355|Dusclops:356|Tropius:357|Chimecho:358|Absol:359|Wynaut:360|Snorunt:361|Glalie:362|Spheal:363|Sealeo:364|Walrein:365|Clamperl:366|Huntail:367|Gorebyss:368|Relicanth:369|Luvdisc:370|Bagon:371|Shelgon:372|Salamence:373|Beldum:374|Metang:375|Metagross:376|Regirock:377|Regice:378|Registeel:379|Latias:380|Latios:381|Kyogre:382|Groudon:383|Rayquaza:384|Jirachi:385|Deoxys:386|Turtwig:387|Grotle:388|Torterra:389|Chimchar:390|Monferno:391|Infernape:392|Piplup:393|Prinplup:394|Empoleon:395|Starly:396|Staravia:397|Staraptor:398|Bidoof:399|Bibarel:400|Kricketot:401|Kricketune:402|Shinx:403|Luxio:404|Luxray:405|Budew:406|Roserade:407|Cranidos:408|Rampardos:409|Shieldon:410|Bastiodon:411|Burmy:412|Wormadam .Plant:413|Mothim:414|Combee:415|Vespiquen:416|Pachirisu:417|Buizel:418|Floatzel:419|Cherubi:420|Cherrim:421|Shellos:422|Gastrodon:423|Ambipom:424|Drifloon:425|Drifblim:426|Buneary:427|Lopunny:428|Mismagius:429|Honchkrow:430|Glameow:431|Purugly:432|Chingling:433|Stunky:434|Skuntank:435|Bronzor:436|Bronzong:437|Bonsly:438|Mime Jr.:439|Happiny:440|Chatot:441|Spiritomb:442|Gible:443|Gabite:444|Garchomp:445|Munchlax:446|Riolu:447|Lucario:448|Hippopotas:449|Hippowdon:450|Skorupi:451|Drapion:452|Croagunk:453|Toxicroak:454|Carnivine:455|Finneon:456|Lumineon:457|Mantyke:458|Snover:459|Abomasnow:460|Weavile:461|Magnezone:462|Lickilicky:463|Rhyperior:464|Tangrowth:465|Electivire:466|Magmortar:467|Togekiss:468|Yanmega:469|Leafeon:470|Glaceon:471|Gliscor:472|Mamoswine:473|Porygon-Z:474|Gallade:475|Probopass:476|Dusknoir:477|Froslass:478|Rotom:479|Uxie:480|Mesprit:481|Azelf:482|Dialga:483|Palkia:484|Heatran:485|Regigigas:486|Giratina .Altered:487|Cresselia:488|Phione:489|Manaphy:490|Darkrai:491|Shaymin .Land:492|Arceus:493|Victini:494|Snivy:495|Servine:496|Serperior:497|Tepig:498|Pignite:499|Emboar:500|Oshawott:501|Dewott:502|Samurott:503|Patrat:504|Watchog:505|Lillipup:506|Herdier:507|Stoutland:508|Purrloin:509|Liepard:510|Pansage:511|Simisage:512|Pansear:513|Simisear:514|Panpour:515|Simipour:516|Munna:517|Musharna:518|Pidove:519|Tranquill:520|Unfezant:521|Blitzle:522|Zebstrika:523|Roggenrola:524|Boldore:525|Gigalith:526|Woobat:527|Swoobat:528|Drilbur:529|Excadrill:530|Audino:531|Timburr:532|Gurdurr:533|Conkeldurr:534|Tympole:535|Palpitoad:536|Seismitoad:537|Throh:538|Sawk:539|Sewaddle:540|Swadloon:541|Leavanny:542|Venipede:543|Whirlipede:544|Scolipede:545|Cottonee:546|Whimsicott:547|Petilil:548|Lilligant:549|Basculin .Red:550|Sandile:551|Krokorok:552|Krookodile:553|Darumaka:554|Darmanitan:555|Maractus:556|Dwebble:557|Crustle:558|Scraggy:559|Scrafty:560|Sigilyph:561|Yamask:562|Cofagrigus:563|Tirtouga:564|Carracosta:565|Archen:566|Archeops:567|Trubbish:568|Garbodor:569|Zorua:570|Zoroark:571|Minccino:572|Cinccino:573|Gothita:574|Gothorita:575|Gothitelle:576|Solosis:577|Duosion:578|Reuniclus:579|Ducklett:580|Swanna:581|Vanillite:582|Vanillish:583|Vanilluxe:584|Deerling:585|Sawsbuck:586|Emolga:587|Karrablast:588|Escavalier:589|Foongus:590|Amoonguss:591|Frillish:592|Jellicent:593|Alomomola:594|Joltik:595|Galvantula:596|Ferroseed:597|Ferrothorn:598|Klink:599|Klang:600|Klinklang:601|Tynamo:602|Eelektrik:603|Eelektross:604|Elgyem:605|Beheeyem:606|Litwick:607|Lampent:608|Chandelure:609|Axew:610|Fraxure:611|Haxorus:612|Cubchoo:613|Beartic:614|Cryogonal:615|Shelmet:616|Accelgor:617|Stunfisk:618|Mienfoo:619|Mienshao:620|Druddigon:621|Golett:622|Golurk:623|Pawniard:624|Bisharp:625|Bouffalant:626|Rufflet:627|Braviary:628|Vullaby:629|Mandibuzz:630|Heatmor:631|Durant:632|Deino:633|Zweilous:634|Hydreigon:635|Larvesta:636|Volcarona:637|Cobalion:638|Terrakion:639|Virizion:640|Tornadus:641|Thundurus:642|Reshiram:643|Zekrom:644|Landorus:645|Kyurem:646|Keldeo .Ordinary:647|Meloetta .Aria:648|Genesect:649|Chespin:650|Quilladin:651|Chesnaught:652|Fennekin:653|Braixen:654|Delphox:655|Froakie:656|Frogadier:657|Greninja:658|Bunnelby:659|Diggersby:660|Fletchling:661|Fletchinder:662|Talonflame:663|Scatterbug:664|Spewpa:665|Vivillon:666|Litleo:667|Pyroar:668|Flabébé:669|Floette:670|Florges:671|Skiddo:672|Gogoat:673|Pancham:674|Pangoro:675|Furfrou:676|Espurr:677|Meowstic &#9794;:678|Honedge:679|Doublade:680|Aegislash:681|Spritzee:682|Aromatisse:683|Swirlix:684|Slurpuff:685|Inkay:686|Malamar:687|Binacle:688|Barbaracle:689|Skrelp:690|Dragalge:691|Clauncher:692|Clawitzer:693|Helioptile:694|Heliolisk:695|Tyrunt:696|Tyrantrum:697|Amaura:698|Aurorus:699|Sylveon:700|Hawlucha:701|Dedenne:702|Carbink:703|Goomy:704|Sliggoo:705|Goodra:706|Klefki:707|Phantump:708|Trevenant:709|Pumpkaboo .Average:710|Gourgeist .Average:711|Bergmite:712|Avalugg:713|Noibat:714|Noivern:715|Xerneas:716|Yveltal:717|Zygarde:718|Diancie:719|Hoopa:720|Volcanion:721|Deoxys .ATK:386.1|Deoxys .DEF:386.2|Deoxys .SPD:386.3|Wormadam .Sandy:413.1|Wormadam .Trash:413.2|Shaymin .Sky:492.1|Giratina .Origin:487.1|Rotom .Heat:479.1|Rotom .Wash:479.2|Rotom .Frost:479.3|Rotom .Fan:479.4|Rotom .Mow:479.5|Castform .Sun:351.1|Castform .Rain:351.2|Castform .Snow:351.3|Basculin .Blue:550.1|Darmanitan .Zen:555.1|Meloetta .Pirouette:648.1|Kyurem .White:646.1|Kyurem .Black:646.2|Keldeo .Resolute:647.1|Tornadus .Therian:641.1|Thundurus .Therian:642.1|Landorus .Therian:645.1|Floette .Eternal:670.1|Meowstic &#9792;:678.1|Aegislash .Blade:681.1|Pumpkaboo .Small:710.1|Pumpkaboo .Large:710.2|Pumpkaboo .Huge:710.3|Gourgeist .Small:711.1|Gourgeist .Large:711.2|Gourgeist .Huge:711.3|Venusaur .Mega:3.1|Charizard .Mega X:6.1|Charizard .Mega Y:6.2|Blastoise .Mega:9.1|Alakazam .Mega:65.1|Gengar .Mega:94.1|Kangaskhan .Mega:115.1|Pinsir .Mega:127.1|Gyarados .Mega:130.1|Aerodactyl .Mega:142.1|Mewtwo .Mega X:150.1|Mewtwo .Mega Y:150.2|Ampharos .Mega:181.1|Scizor .Mega:212.1|Heracross .Mega:214.1|Houndoom .Mega:229.1|Tyranitar .Mega:248.1|Blaziken .Mega:257.1|Gardevoir .Mega:282.1|Mawile .Mega:303.1|Aggron .Mega:306.1|Medicham .Mega:308.1|Manectric .Mega:310.1|Banette .Mega:354.1|Absol .Mega:359.1|Latias .Mega:380.1|Latios .Mega:381.1|Garchomp .Mega:445.1|Lucario .Mega:448.1|Abomasnow .Mega:460.1|Beedrill .Mega:15.1|Pidgeot .Mega:18.1|Slowbro .Mega:80.1|Steelix .Mega:208.1|Sceptile .Mega:254.1|Swampert .Mega:260.1|Sableye .Mega:302.1|Sharpedo .Mega:319.1|Camerupt .Mega:323.1|Altaria .Mega:334.1|Glalie .Mega:362.1|Salamence .Mega:373.1|Metagross. Mega:376.1|Kyogre. Primal:382.1|Groudon. Primal:383.1|Rayquaza. Mega:384.1|Lopunny. Mega:428.1|Gallade. Mega:475.1|Audino. Mega:531.1|Diancie. Mega:719.1|Hoopa. Unbound:720.1';
 
 //Compressed Pokemon data: HP/ATK/DEF/SP.ATK/SP.DEF/SPD/Type1/Type2/Egg1/Egg2/EPs2/EPs1 - national order + forms
 pkmn='            3vv//3.*#< #)SP00).*#< !0sW440.*#< 9νY`)(/;;#AB QBQ0/0;;#AB#VyVγ84;&#A *UJ/(B`""#&> kP0/0Q""#&>$cW48CV""#& 63?@II399**# (I1MM?99**H )3(50,9&** 92@?II(9***B 3M(MM@9***H /523079***-$232@@a &$$B P)1((e &$$F W07,,ι &$$z ?a@M@R  !!B 1m)(,|  !!F 2)?ΑΑ, &$$B /5/dd4 &$$F @)U2t1**!A$ )8l/c0**!A- @12((566!9F )5150D66!9z (78I?2$$!!> 74D31/$$!!H 1ζY22q**#!# ,SX11a**++& 5iη78^*$++* βj222(**#!$ dRj11/**#!- mΓ]878*$#!6 ,3J)/@GG99& :,g:5)GG99* nq2(//;;!!B g^7m44;;!!B$K3I3MI G99& _,38(3 G99* 23@?21*&$$B 70,/75*&$$F 3(17/?.*<< #)/,872.*<< &708D5(.*<< *@,131M9.*<$ ):0)0?9.*<ρ )1(2139*** $,/)5759***B#"1M@3:$$!!B @0((,E$$!!F 23@225  !!B /,)//K  !!F (YJ/(1""&! #0sV:08""&! &20@@3,##!!$ /C)),:##!!- 1,3,();;!!$ 5D040:;;!!- 2(2225""&&B ///((5""&&F 5::,5,"#&&J MI+C15==-- #2@?E,C==-- &1(3Z:E==-- *,0(@@@##--$ 04,()3##--- 5L0/81##--6 (7@,?2.*<<$ /5(831.*<<- 0C/4,,.*<<6 22@(4,"*;; $0,/0E4"*;; -204??I!$""> 1:K33@!$""H 0EL1/3!$""J (81//5;;!!B /4,00C;;!!F 5//22+"=#&# :7D40?"=#&H M@,:136-"" #():E,,6-"" &Y/1QS) &$!$ @83@@7 &$$$ )D,))4 &$$- /313,3""&! $5,0,:,"A&! -00(2(M**..# CC7/4(**..! ?/43M2"";;> (:δ83,"A;;H ?@?4@0<*.. #3(3K1:<*.. &)/)L7D<*.. *@3u?3,!$""> )J3`5f==-- $8g,gKX==-- -?C5MM("";;$ 1LK((7"";;- 2?(11466""B )(,00_66""F )20)32.=<<> ::8N/1.=<< &((:2(@$$##> )0D(03$$##H (Eh@Dη##--- (Cc@D^##-- -517)7?  ##& 2/:)3@**..> /5E8,)**..H 08:??M$!#!> CLE332$!#!- ά!!@C(  99& /1K42)..<<> C:0205  ##& ?2,,M)""&A #1/::38""&A>#3X)@(P""66$ 0i//0T""66- ?31,18"";;B )7848K"=;;F 23/4E5=G-- -,D010C9&**$ /(@K::A=-- &/Wj:8C66--F /:j48Ι;;-- &/N41,899**- 74:2,D  !!T I"1+I0""6AB :Nc)4m"&6A- L808:)"A#&& JJJJJJ  ==# 11(3/1  !! $L/)D:/""!!& //)D:L66!!F /L):D/;;!!- /),872  "" #@2451@!"&;> ,)NK,1!"&;H ?05131!"&;> )KC/,0!"&;- 0C/)7L!&$$F uD//D?  ##& 584:N8A&++ 6558N546&++ *545N85;&++ *qB3(((++&A$ dy/,,,++&A- oΥ:440+&&A6 }D5Θ5L==++ *444444==++* 3v/v/3..#< $)S0P0)..#<>$0s4W40..#<>-νY`)(/;;!!B QBQ0/0;;!!B#VyVγ84;;!! *(/BUJ`""#&$ /00kPQ""#&I 8C4cWV""#&ρ @βΒ@3I  !!$ 8^B315  !!F )??%a( &$$# 4((^Τ, &$$& 2I?2019&** $1@(1D89&** -2)222?9***$ ,5,))29***- 850,0L*&$$z 7nnaaX"666# NQQ^^X"666& I2+@@)66++B (Mφ31+GG++ $5?+2I+ G++# @I/2/IGG++ $1280C2G&$9 -2(3,3,=&$$ #/7,:,:=&$$B#122/3@66#! #,110)366#! &578K5166#! *70:54(..<< 6,I(I(2"G&9& 4(0)0("G&9* ,4K?/?!!""H 57754,""&& 6@@2@1(.&9< $13(3/0.&9<F 71,1:D.&9<z 1,1218  !!B ??????..<< #771C8?..<< &//373:9&**B 133MM+"$&!# :88//@"$&!& //)L:D==!! &:/D)L/>>!! -)8f8fo>&$$B :704D?"=#& 6)))888<<.. $JRJRJJ==++$#ςυQυQυ==..& ,0/5/8 =!! &(/5@@+99**> 75_))29-**H 4,,//3  !!# /7C@/8$&**> 78Ξ1/?-$""H )0(22?GG!9$ 5E7))3GG!9- /:7118"*66$ ,L410/9-**- I"Ν"Ν!9!**>$0N72:89#**- 1:1@7K>A!!B )0(((2  !!$ 5L7771  !!- 222,2I;;.. #((E00?;!..H ((2??(A$!!$ 440))(A$!!! 118/8@"!&;>$@/@/@/""&6 #7C7C73""&6$#313/37A&&!B /2,0_,"&&& -/0_2,,-&$$H 3)?0(/>;!! #75(D0:>;!! &7::::8"+&A$!5))222$$!!# 5EE))($$!!I 805C:)  "" &g:S8/8  !!$ 1I@I37  !!B @@@@@@##++$ (::@D,##-- -3?+8//A=++ #3P~/1:66++B 37~,1W;;++B :0C2,4  !!H έ""7Z1  99* 587K4K66++F#KK8574;;++; 47K5K8""++>-(B(3(q!$##$ ,y,/,θ!$##- 4ΥD:4d!>##6 }5L5ΘD=&++ 6}L5DΘ5;&++ 6444444=.++* 23@/1,..#AB (/38/:..#AF ,8/C8E..#Az 3)2,(3;;!! #)8)8)1;#!!$#0E,D,0;#!!6 (,(((2""#&$ ,8,),("$#&- 4D585)"$#&6 @1@??@>>!!$ ,5,)),>>!!- n?q?q)  !!B V,d(d4  !!F 33@I?I99**# (@1MM+99**H ),(4(/9&** *(@1MM+99**H )(,(5/9*** 62??2(?".&< $)((),(".&< -0,,54,".&< 622(???..!<> ,,2)2).>!<- 54)5)0.>!<6 21???8 &$$B )8)((N &$$F 2??1?8"&&$B )(48,/"&&$H φMM3@2=G.. #n@@/1(=G.. &T//NK0=G.. *2?H(Y/9"&*B ,)S0s)9&&* !)2)2)@..9<# )L0)),.#9<- )))@@?  !!# 000115  !!F Ou4:/4  !!* Α35??29$**> d53((u9&**F #53??29<""& Bθμθμφ  #!# ye`e`J  #!& οoPogT  #!* R)?I?M##--# ήE)2)(##--& (I2I2I G++# ?3Z35?!!""> (33@@(  !9B ,//11,  !9/ (77//(><--I (8811(-G!9I (,422?-!##> )5_((2-!##H ,Dδ))(-!##J ?2121)#=--B ))7)70#=--F 232/2/66!!B ,7)C)C66!!F )(287:6699B )2(78:6699B /g1ζ7899*-B /ζ1g7899*-B ()340/.*9< &,`h`h2**..# 4gWgW1**..& 35I/I/">66$ ,E2:2:">66- L,@,@)""!6# ω5353)""!6& ))2/3@;$!! #,4,C72;$!!$#,8_8,I;;!!H )M@,0)==!! $03/5D0==!! -))))))  !- #34333"$$**$ (,(((,$+**T 040004$+**Σ (8282@..<- #,K)K)1.><-$#32)27( &$A $7,5,C0+&$A -gK)))5  !!- g4)4)/**!A$#,1/:8,!="" &,:81/,!=""- (J`βq)"$66# DVg^e)"$66& `0/(@@""&;$ PE8511">&;- 2212,1$="" $),C,E7$="" -bq]dημ!.;; $[m|mw`!.;; -3:(2(7!9;;$ 7N4,03!9;;- I+I"10""&AB :)c4Nm""&A -,,,,,,  9.# )5,)E2  !! $U7@Pυ3<<..$ BK/WP/<<..- I25?5M<<.. $2,L)LM<<..>$κTWRηθ.&#<& /(,:0/==.. !/L)7)7>>!!- :μJμJμ==++# ((((((AA9"# 000000AA9"& ,2(1(MA"&!# 5),7,3A"&!& D05:5/A"&!* @B8p1H""&&> 1οCχ7Y""&&I 1yCΛ7Y""&& &45L3/1"!&6G `?12/|""66B 37)2?(++AA$ /:4)((++AAH :Z0D04+&AA6 210@)?-=""> )7410(-=""H 0ZL:5,-=""J 04Ξ(4(!!++J 0(44Ξ(AA++ 607O7O(--++H$005DLD+=++ 6050LDD+=++ *445O_5""++ *4O_455$$++6 CO5O5:+&++-#444444-=++* (O(O(O==++T#1TB31Α..#<$ 7α81/%..#<I :γC78a.$#<ρ UQUQUd;;!-B BVYVYm;#!-B#^οeοer;#!-T#hθhda2""&! #BbTm^(""&! &y[λΗι)"-&! *21???) &$$B 17(220 &$$F 8E,()4 &$$6 k32@2Α  &!# c8)1)e "&!- ~MqMqM99**> ]8θ1θ/99**- 3/Β2Β366!!$ )8v)v)66!!- 0Ec:c,66!!6 2?@(,1.*++ #),/NC5.*9< *XN2??Q!!##$ |ψ)/(Q!!##- ?fΠfλ?!-##> )Yίζό?!-##H 2Δ3Δ3%99** $)k8cC%9.** -,χ(χ(b9&**$#??f?f,9&**B ,0Γ0Γ29&**>$)3,35:66!9B 1/@)?8""&!B 8C18(K""&!F 3@3Sh@..9< #,),ηV8..9< &^JJjSΒ""&.# ΗWTisν"$&.& 74b)bK  !!F 5(Β)U,<&..# O0U5t0<&..& 1bUUa8  !-B /^ytΤC  !-F )))CCC<<.. !4NYCYe>&$$- v1ff~8  !!B esBBkπ  !!F 3?(/(3==++ #PPζqqp*>!!B εΙXedy*>!!& jρ[ρ[μ-=""> Xασcσυ-="">$(0:"3"!!++> IM3,5)=G++ $4!!+/?  ++# ^/3ifo &$$$ (irir@<>..>$Q,323f+$#A$ T5/(1s+$#A- rL:08Γ+$#A6 Z8228!  ++# 2,2@2)##++$ ,D,K,5#-!-$#TRVnfH$$!!> rπΠTRζ$$!!H 2(5?1/*9*;> ,5D)7:*>*;H Jd2d2(*#--$ W}/[/8*#--- p4R5Rβ..<<- vvavdb""66B ll^l[o""66F 3I()E("&++ $)S(S)2.A#<$ 5i7i8).A#<$#,E/38N>A!!T ,,KL5)6-"" *D8:0:(  ##* K_L112$!#!6 44ND((..<<H 7ξX:8:66--6 7:XN:W;;-- *8(:EK0G&$9 9[^[σa:9&**- /DL)/:..!!H /)DL:/AA!! &7:N37:$&**H DL0,)0A$!!6 80,Z75  "" *TN//K0=#..6 )1{7O2!-"">-34Z/Z3<<..>-,0,0,DA<9"F ((]:]o6<..B#77L7L:==++H$0CCCC0==++$!7N,N,K==++-#4EEO45-+++ *5E4OE4"+++ *o5}L}];-++ *DuD0D4  ++6 O4E4E5<+++* E,E7L8==++ 6000000""&9# 444444""&9* ,55Z5N>>++B&444444..++* EEEEEE  ++* 444444=;++* 33131P..!<B ))7)7W..!<F 77:7:Ψ..!<z /P3333;;!!# 5Ι1,11;#!!- Dξ/4//;#!!6 113P33""!! #77)W))""!! &:48r,,""!! *31ν@νf  !!$ )8l)l]  !!- 3)3M31  !!$ /0/@/)  !!- 8D5350  !!6 q(~(~b>>!!B Bλ(λ(}>>!!F (hJhJB..!!B 7xPxPι..!!F (hJhJB;;!!B 7xPxPι;;!!F (hJhJB""!!B 7xPxPι""!!F ^M3X1ρ==!!# σ18w:Δ==!!& (1(%?` &$$$ S]S(f/ &$$- 0K0/1Ι &$$6 3)H(H^66!!B 74P0Pσ66!!F 178MM+!!""> ,CC(2I!!""I 8ZL)0M!!""6 13`1`R=&!$B Xj1]1Λ=&!$F )82?3T$$!!$ DZ)(/λ$-!!- ε)[)[(  99& 701M@@##--$ 8C82(2##--- C_:1/3##--6 ((2(2B""&&B 7/1/1l"$&&& C:787p"$&&* E48?83##--& 7N7?78##--- 3h,2)f9.**> 1P5(0f9.**H 7ε0,0i9.**6 ?3k?νj9***> 21κ2cζ9***H )4α1lπ9***z 2Ο)~(b.G<9B )X8]7σ.G<9F 3@(,(?..<< #,)7D75..<< &,i/01x""66F (R@@@/$>!!$ )s333p$>!!- :Ρ0/,i$>!!6 ,53+3(;;!!$ C_1?1:;;!!- 7[X}X)..<< &(/8@@19!*"> ,:N/739!*"H (7,@,J>#!A$ /5K3KQ>#!A>$RQ0ε0|=&$$ &n?81/?<<".> Q({:C?<<".H tVεh3Φ"!&;> prύW/H"!&;H 1π3p3,!&$;$ 7_/π/D!&$;- ((S2S/**""B 0:s)s7**""- 2/202/>>!! #)C)E)C>>!! &1(2227  !!B 7:)/)K  !!F 3?(1/3==-- $)3,781==-- -,1::D/==-- 63?2C(I==.. #/2(N)?==.. &D/7N8?==.. *SU(U(1"&&$# 7ηPηPx"&&$F %((/)UAA"" #θ//07kAA"" &e:8D:cAA"" *))(2(7 .!!B 04,),: .!!- 17)7)ε6&!!F (7323)99**$ ,ZC)CI9-**- l1311+.*<<# Λ8,80?.*<<& 12(/82"<.. $4),8C)"<.. -ψ7023/""&6& (ζ(j(/96**B ,])|)r96**F U(oρ[".-<"> pχΕtσI.-<"H 21,3)?--""> )0:,8(--""H )4K,85--""J @1232)66..B /8,7,266..- 8K0C0(66..6 11181?==-- #777N:2==-- &(?1/1I<;.. #)2):)1<;.. &)15{50<;.. *βη)?2j++#A$ bΡ,2(X++#A- ^ώ5),|++#A6 1,2)22AA!!$ :D0,0(AA!!- ,(?:ZCAA"" -(282/M99**> 0,24){99**F γbymκH$6&.& 38(1(/##!-$ /N):)C##!-- ]E5)5J++A#- kp(@(@$<""$ αΧ0101$<""- 38,22)>---$ /N4),,>---- :D:2:1  !!- ,W(~() &$$$ 4ξ7j70 &$$- ,173/)>&$$> D/C1:0>&$$ &8|bCb/;;!! &QγπJJγ9-**H Y/(3(n>+AA$ R8,/,Q>+AA- iC5N5x>+AA *181(1)9;**$ 8)/ZC49;** *o5Ζ5Rr-#++J oΖ5R5r!#++6 o5R5Ζr.#++ 6cK,N0Η&&++6 cK,N0Η6&++6 4E4OE5+;++ *4OEE45+6++6 αN5K0ι$&++ *NL5L5:+A++!#oR5Ζ5r"#++ *4]]FF5 =++B!eE:E:κ9-++T#ad/J3n..!!> dV:aQj..!!H λwτp7B.#!!J 232S));;!! #kkQ5,g;;!! &7lRΛ4ο;=!! *qa2SUe""&&B tPYWa|""&&F R:Xεeτ">&&z n%nH%j  !!B 8a](]V $!!& 3(`2nS &$$B Sg1aYy;&$$B VmeplΚ;&$$F n@2ΟM@99**> 3Φ)Ο?Δ99**> 0Y(5(α9&**> S(QgtR; !! #[TRγb}; !! &UnνdcfGG99 $t3ζ7xYGG99 -V/TπΘ7GG99 6b/JSjY..!!# ξ4S|mT..!!& XsSβJ`##!-$ :ΧVleQ#>!-- 70)/5Γ  !! $SJtP)T==!!B pJ^Wmο==!!F 304@~φ-<""H kDO3v@-<""H )(O(O)-<""J VY)P/μGG99# ιRRκαΔGG99& SJbkjvGG99> s0[87RGG99H hth~β3>=&6$ [iλT7g>=&6$ fYXνa(!";;$ RCKt[T!";;- ())))?*"&A #/75|ξU*+&A &(hSQPU""&; #egλEαk""&; #Unυd`,6 #AB S1Yγχγ6 #AF Qα]33J!+#A$ sΜϊlke!+#A6 ]k(XPβ!A### ξ]RκiQ!A##& ://DL)GG!! -Vi7pPΠ#&--- XQjmXι6G!9F ((O(O(!G9">$3(@172++AA $T7hWΨ)++AA -54,DO0++AA 6j0o0η7-G""> `,J()n<.<.$ 8D^/sa<.<.- vb,U1θ<...> /5τQ7y<...H 1l8H@φAA##> :ΡϋUβφAA##H 2?@321&+$$B 8,0|0ξ&+$$F ΚΕ:ΕxκGG++* ΚΕ:Εxκ>&++* r4Μm::+$++* (4O4O(!G++  0D)OL,=<++  0DEL5,;"++  (δIδIO==++-#(,u,u5==++H$(:5:5δ==++z )cCk8%9$**H )l:l:%9-**>$4ε7E7ΐ.&++z OE4E45<+++* (/wCw[6;..B#(/wCw[6"..B#(/wCw[6A..B#(/wCw[6&..B#(/wCw[6...B#,,,,,,;;9.# ,,,,,,""9.# ,,,,,,AA9.# ,i/01x""66F C?C_C1;=!! &4F5]]F #++y NE5ω4:+A++ *Nω4E5:+A++6 oR5Ζ5r"#++ *c40D5Μ&&++z cC,{0ι6&++ *α{5C0o$&++6 p/XNFiGG++ -pJ^Wmο==!!F )O(O()-<""J Ub,U1a<...> tb,U1β<...> kb,U1q<...> 18τQ7κ<...> 7:τQ7l<...> 84τQ7t<...> 04ξτE0.*#< 9VLΗL84;+#A *VοVàK4;&#A *cεEZKV""#& 61(/á:O==-- *)/0ω:L<*.. *CN4)44  ##& /ΩE/5C9&**- :Ωγ,Lm">6A- 0Z8,:O!&$$F }ς4Θ4L=#++ *}O,âE_==++ *5:CψD36+#! *,O_/479-**- 0ãK2C79#**- 755_5K>;!! &4äO:Ee!>##6 0u0L04;#!!6 T8/ψZ4=G.. *(CN1:(-G!9I ,_Ν)0(--##J )48084#=--F ,70Z0Z66!!F Bψ7ΙW7<<..- /O)K)K>>!!- 04E_OD+=++ 60L4uED+=++ *rωKE:i+$#A6 ,{λ_,π#-!-$#5ΣCΣC?.A#<$#/O2+0{9***-$W00Z0Μ &$$z :7δL0?"=#&H 7NΝ1:?-$""H ,D7{8{.+#Az 4OD:D,"$#&6 (8N8KI><--I ,_,D/C">66- ,E4{CI;$!!$#7DDDC0+G$A -0E0E04AA9"& :{LE5E+&AA6 0{OCDD-=""J 4O5δu5""++ *4δuO55$;++6 Cδ4δ4K+&++-#/åχtΤZ #!-F Tψ:/KD=#..6 ε)Κ0Κ( G99& (uDuDD!G++>-0u)ωL0=>++ *';
@@ -511,7 +515,7 @@ mn=' !"#$&()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmn
 mn=mn.split(''); base=[];
 
 forms_after = 721;
-forms =  {386.1:722,386.2:723,386.3:724,413.1:725,413.2:726,492.1:727,487.1:728,479.1:729,479.2:730,479.3:731,479.4:732,479.5:733,351.1:734,351.2:735,351.3:736,550.1:737,555.1:738,648.1:739,646.1:740,646.2:741,647.1:742,641.1:743,642.1:744,645.1:745,670.1:746,678.1:747,681.1:748,710.1:749,710.2:750,710.3:751,711.1:752,711.2:753,711.3:754,3.1:755,6.1:756,6.2:757,9.1:758,65.1:759,94.1:760,115.1:761,127.1:762,130.1:763,142.1:764,150.1:765,150.2:766,181.1:767,212.1:768,214.1:769,229.1:770,248.1:771,257.1:772,282.1:773,303.1:774,306.1:775,308.1:776,310.1:777,354.1:778,359.1:779,380.1:780,381.1:781,445.1:782,448.1:783,460.1:784,15.1:785,18.1:786,80.1:787,208.1:788,254.1:789,260.1:790,302.1:791,319.1:792,323.1:793,334.1:794,362.1:795,373.1:796,736.1:797,382.1:798,383.1:799,384.1:800,428.1:801,475.1:802,531.1:803,719.1:804,720.1:805};
+forms = {386.1:722,386.2:723,386.3:724,413.1:725,413.2:726,492.1:727,487.1:728,479.1:729,479.2:730,479.3:731,479.4:732,479.5:733,351.1:734,351.2:735,351.3:736,550.1:737,555.1:738,648.1:739,646.1:740,646.2:741,647.1:742,641.1:743,642.1:744,645.1:745,670.1:746,678.1:747,681.1:748,710.1:749,710.2:750,710.3:751,711.1:752,711.2:753,711.3:754,3.1:755,6.1:756,6.2:757,9.1:758,65.1:759,94.1:760,115.1:761,127.1:762,130.1:763,142.1:764,150.1:765,150.2:766,181.1:767,212.1:768,214.1:769,229.1:770,248.1:771,257.1:772,282.1:773,303.1:774,306.1:775,308.1:776,310.1:777,354.1:778,359.1:779,380.1:780,381.1:781,445.1:782,448.1:783,460.1:784,15.1:785,18.1:786,80.1:787,208.1:788,254.1:789,260.1:790,302.1:791,319.1:792,323.1:793,334.1:794,362.1:795,373.1:796,736.1:797,382.1:798,383.1:799,384.1:800,428.1:801,475.1:802,531.1:803,719.1:804,720.1:805};
 
 function get_base(p,s) { //Returns values from pkmn
 	if (p.indexOf('.') > -1) {
@@ -579,9 +583,9 @@ function online_check() { //Checks if there's an internet connection alive
 		online = 1;
 		add_sprite();
 		//Version Check - DO NOT change the following
-		$('version').innerHTML = '<a href="http://legendarypkmn.github.io/ivcalcxy.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="http://legendarypkmn.github.io/ivcalcxy.html">newer version</a> available!</strong>';
+		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/ivcalcxy.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/ivcalcxy.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'http://legendarypkmn.github.io/ivcalcxy_1.4.1.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/ivcalcxy_1.4.1.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
@@ -592,9 +596,9 @@ themed = themes.indexOf('none'); //global- set default theme here
 theme = (!cookie_read('theme')?themed:cookie_read('theme'));
 function toggle_theme() {
 	$('calculator').className = themes[theme];
-	display_status('The active theme has been changed to "'+themes[theme]+'".<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>');	
+	display_status('The active theme has been changed to "'+themes[theme]+'".<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>');
 	if (theme == -1 && (navigator.userAgent.indexOf('MSIE ') == -1)) {
-		display_status('The active theme has been changed to "Colorize".<br/>Select Hue, Saturation and Brightness:');	
+		display_status('The active theme has been changed to "Colorize".<br/>Select Hue, Saturation and Brightness:');
 		var c = cookie_read('color') || 'd';
 		if (c.charAt(0) == ',') {
 			c = c.split(',');
@@ -635,7 +639,7 @@ function toggle_evs() { //Enable/Disable EV functions
 		break;
 		case 0:
 			eps = 1; $('btn-evs').value = 'EVs: ON';
-		break;			
+		break;
 	}
 	var j = $c('eps').slice();
 	var i = j.length-1; do {
@@ -673,9 +677,9 @@ function toggle_mode(m) { //Single/Team/Row mode
 			$('mode1').style.display='none';
 			$('btn-hp').disabled = '';
 			$('btn-stats').disabled = '';
-			$('btn-eps').disabled = ''; 
+			$('btn-eps').disabled = '';
 			display_status('Mode has been changed to <strong>Single Pokémon</strong>.');
-	}	
+	}
 	display_sprite();
 	display_effectiveness($('number-'+(act>-1?act:0)).value);
 }
@@ -712,7 +716,7 @@ function code_load(c) { //Loads a SaveCode
 	//Load row data
 	$('statrows').style.display = 'none';
 	el_del($('statrows'));act=-1;actp=0;rn=1;rs=[0];ivs=[];
-	
+
 	var i=2, r=i-2; l=c.length;
 	if (l > 2) {
 		do {
@@ -730,7 +734,7 @@ function code_load(c) { //Loads a SaveCode
 	//Restore focus and set active row
 	$('act-0').checked = 1; act=0; actp=0; row_sync();
 	$('statrows').style.display = '';
-	
+
 	display_effectiveness($('number-'+act).value);
 	tooltips();
 	display_status('Loaded SaveCode successfully!');
@@ -747,13 +751,13 @@ function code_save() { //Displays a SaveCode
 	c += $('med3-0').value+',';
 	c += $('med4-0').value+',';
 	c += $('med5-0').value+',';
-	c += $('statlvl').value+''; 
+	c += $('statlvl').value+'';
 	var s = $c('statrow'), i = (mode==2?0:s.length), r = (mode==2 && act>-1?act:0); s.reverse();
 	do {
 		c += '!'+$('number-'+r).value+','+$('level-'+r).value+','+$('stat0-'+r).value+','+$('stat1-'+r).value+','+$('stat2-'+r).value+','+$('stat3-'+r).value+','+$('stat4-'+r).value+','+$('stat5-'+r).value+','+$('ep0-'+r).value+','+$('ep1-'+r).value+','+$('ep2-'+r).value+','+$('ep3-'+r).value+','+$('ep4-'+r).value+','+$('ep5-'+r).value+','+$('nat-'+r).value+','+$('char-'+r).value+','+$('hpt-'+r).value+','+$('pot0-'+r).value+','+$('pot1-'+r).value+','+$('pot2-'+r).value;
 		if (i > 0) { r = s[i-1].id.split('-')[1]; }
 	} while (i--);
-	display_status('<a href="'+c+'">SaveCode</a> (<a href="http://j.mp/http://legendarypkmn.github.io/ivcalcxy.html'+c+'">shorten</a>):<br/>'+c.split('!').join('! '));
+	display_status('<a href="'+c+'">SaveCode</a> (<a href="http://j.mp/https://legendarypkmn.github.io/ivcalcxy.html'+c+'">shorten</a>):<br/>'+c.split('!').join('! '));
 	$('contact').href = 'https://legendarypkmn.net/contact?topic=IV%20Calculator&text='+escape('My browser is: '+navigator.userAgent+'\nMy savecode is: '+c+'\n\n');
 	//window.location += c; //Uncomment for old behaviour
 }
@@ -844,7 +848,7 @@ function row_add(n,lvl) { //Appends a new row
 	if (mode==0) {
 		var p = rs[(rs.length-1)];
 		var ep = [$('ep0-'+p).value,$('ep1-'+p).value,$('ep2-'+p).value,$('ep3-'+p).value,$('ep4-'+p).value,$('ep5-'+p).value,];
-	}	
+	}
 	rs.push(rn);
 	var a = document.createDocumentFragment();
 	var b = el_add(a,"tr",{id:'statrow-'+rn,className:'statrow'});
@@ -920,13 +924,13 @@ function calc_hidden(n) { //Displays all possible Hidden Powers
 		display_text(n);
 	}
 	display_status('<span class="loading">Calculating <em>Hidden Power</em>...</span>');
-	
+
 	if ($('medl').checked) {
 		var t = [typeshp[calc_hiddent($('med0-0').value,$('med1-0').value,$('med2-0').value,$('med3-0').value,$('med4-0').value,$('med5-0').value)]];
 		//var p = [calc_hiddenp($('med0-0').value,$('med1-0').value,$('med2-0').value,$('med3-0').value,$('med4-0').value,$('med5-0').value)];
 		display_hp(); return true;
 	}
-	
+
 	if (error != 0) { display_status('Does not compute!<br/>Properly input or Calculate IVs first.'); return false; }
 	var a = [], b = $('hpt-'+n).value, t = [], p = [], i0=ivs[0].length-1;
 	do { //must optimize this further
@@ -983,9 +987,9 @@ function calc_stativ(species,pstat,stat,statev,pokelvl,nature,chara,pot1,pot2) {
 	var  i=31; do {
 		if (calc_stat(species,pstat,i,statev,pokelvl,nature) == stat) { ivs[pstat].unshift(i); }
 	} while(i--);
-	
+
 	if (pstat == 0 && species == 292) { ivs[pstat] = ivr.slice(); } //Shedinja Case
-	
+
 	if (chara[0] == pstat && chara != -1) {
 		ivs[pstat] = array_intersect(ivs[pstat],charas[chara[1]]);
 		maxiv = ivs[pstat][ivs[pstat].length-1]; //global maximum IV
@@ -1011,7 +1015,7 @@ function calc_ivs(rn) { //Calculates a complete IV set
 		return false;
 	}
 	display_status('<span class="loading">Calculating <em>Individual Values</em>...</span>');
-	
+
 	function validate_iv(result,species,pstat,stat,statev,pokelvl,nature) { // IV error handling
 		var spname = get_text('species',species);
 		var max = calc_stat(species,pstat,31,statev,pokelvl,nature);
@@ -1021,7 +1025,7 @@ function calc_ivs(rn) { //Calculates a complete IV set
 			ivs[pstat] = [-1];
 			return ['error'];
 		}
-		
+
 		var i=0,l=result.length; do {
 			if (result[i] > maxiv) { //beyond characteristic upper bound
 				result = result.slice(0,i);
@@ -1031,7 +1035,7 @@ function calc_ivs(rn) { //Calculates a complete IV set
 			}
 			i++;
 		} while(i<l);
-		
+
 		if (result.length == 0 || result[0] > maxiv || result[0] == -1 || result[result.length] > 31) { //out of any bounds
 			error = '<em>'+spname+'</em> Lv.'+pokelvl+' does not compute!<br/>The <em class="error">'+stats[pstat]+'</em> stat, <em class="error">Effort Points</em>, <em class="error">Characteristic</em> or <em class="error">Best Stat</em> are inaccurate.'; //global error - prevent complex calculations
 			ivs[pstat] = [-1];
@@ -1043,7 +1047,7 @@ function calc_ivs(rn) { //Calculates a complete IV set
 		var ties = $('pot1-'+rn).value.split('.');
 		var l = ties.length;
 		if (l > 1) {
-			var t = ivs[ties[0]].slice(); 
+			var t = ivs[ties[0]].slice();
 			var i=1; do {
 				t = array_intersect(t,ivs[ties[i]]);
 				if (t[0] == undefined) {
@@ -1055,7 +1059,7 @@ function calc_ivs(rn) { //Calculates a complete IV set
 			ties.map(function(v){ivs[v]=t.slice();});
 		}
 	}
-	
+
 	maxiv = 31; miniv = [-1,0];//global- maximum IV
 	ivs = [ivr.slice(),ivr.slice(),ivr.slice(),ivr.slice(),ivr.slice(),ivr.slice()];
 	//Calculate row(s)
@@ -1076,10 +1080,10 @@ function calc_ivs(rn) { //Calculates a complete IV set
 		if (error != 0) { display_status(error); $('stat'+i+'-'+r).focus(); return false; }
 		if (ivs[i].length == 1) { c++; }
 	} while(i--);
-	
+
 	validate_ties();
 	if (error != 0) { display_status(error); $('pot1').focus(); return false; }
-	
+
 	//Refine using Hidden Power //XY TODO
 	if ((error == 0) && $('hpt-'+rn).value > -1) {
 		if (c == 6 && ($('hpt-'+rn).value != calc_hiddent(ivs[0][0],ivs[1][0],ivs[2][0],ivs[3][0],ivs[4][0],ivs[5][0]))) {
@@ -1147,11 +1151,11 @@ function calc_ivs(rn) { //Calculates a complete IV set
 		}
 	}
 	//end Hidden Power refine
-	
+
 	validate_ties();
 	if (error != 0) { display_status(error); $('pot1').focus(); return false; }
-	
-	//Pinpoint next helpfull level and EPs if IVs are multiple
+
+	//Pinpoint next helpful level and EPs if IVs are multiple
 	//plv: 1-level 2-eps 3-stat1 4-stat2 - branched stats
 	var lr = (mode==2?rn:rs[rs.length-1]);
 	var plv = [];
@@ -1237,11 +1241,11 @@ function display_eps(n) { //Displays provided EPs
 	var sum = 1*$('ep0-'+n).value + 1*$('ep1-'+n).value + 1*$('ep2-'+n).value + 1*$('ep3-'+n).value + 1*$('ep4-'+n).value + 1*$('ep5-'+n).value;
 	$('eps-'+n).innerHTML = (sum==510?'<span class="ok">'+sum+'</span>':sum);
 	var item = $('item').value;
-	var vit = ((item > 7)?0:1); //vitamins on or off	
-	var berry = 1; if (item > 13) { berry = -1; item = item-6; } //berries off or on	
+	var vit = ((item > 7)?0:1); //vitamins on or off
+	var berry = 1; if (item > 13) { berry = -1; item = item-6; } //berries off or on
 	var mult = $('times').value*(($('pkrs').checked == 1)?2:1)*((item == 1)?2:1)*vit; //multipliers
-	
-	//hp up, protein, iron, calcium, zinc, 13carbos - Pomeg, Kelpsy, Qualot, Hondew, Grepa and Tamato 		
+
+	//hp up, protein, iron, calcium, zinc, 13carbos - Pomeg, Kelpsy, Qualot, Hondew, Grepa and Tamato
 	var  i=5; do {
 		$('eff'+i).innerHTML =  mult*(1*(get_base(p,10)[i])+((item == 2+i)?4:0)) + $('times').value*(1*((item == i+8)?10:0))*berry;
 		$('item').options[i+8].disabled = ''; //reset vitamins
@@ -1252,7 +1256,7 @@ function display_eps(n) { //Displays provided EPs
 			}
 		}
 	} while(i--);
-	
+
 	if (sum > 510) { $('eps-'+n).className = 'error'; }
 	else { $('eps-'+n).className = ''; }
 }
@@ -1266,18 +1270,18 @@ function display_nature() {
 	} while(i>0);
 }
 function display_char() {
-	var i=5; do { 
+	var i=5; do {
 		$('med'+i+'-0').style.borderWidth = '';
 	} while(i--);
 	var n=$('char').value.split('.')[0];
 	if (n > -1) { $('med'+n+'-0').style.borderWidth = '3'; }
 }
 function display_effectiveness(p) {
-	var type1 = get_base(p,6); 
+	var type1 = get_base(p,6);
 	var type2 = get_base(p,7);
 	var d = []; d[4] = []; d[0] = []; d[1] = []; d[2] = []; d[8] = []; d[16] = [];
 	var t = []; t[4] = []; t[0] = []; t[1] = []; t[2] = []; t[8] = []; t[16] = [];
-	
+
 	if (mode==1 && act >-1) {
 		for (var i=0,l=rs.length; i < l; i++)  {
 			p = $('number-'+rs[i]).value;
@@ -1313,7 +1317,7 @@ function add_sprite() { //Adds sprite events
 	display_sprite();
 }
 spr = '';
-function display_sprite() { //feel free to modify if you want to server sprites from your server
+function display_sprite() { //feel free to modify if you want to serve sprites from your server
 	clearTimeout(spr);
 	if (!navigator.onLine) {
 		online = 0;
@@ -1369,7 +1373,7 @@ function display_text(r) { //Displays copy & paste results
 function display_stats(r,m) { //Displays calculated stats
 	if ($('statlvl').value == 0) { $('statlvl').value = 100; }
 	if (mode == 1) { display_status('Cannot compute Stats in Team mode.'); }
-	
+
 	var  i=5; do {
 		if (m === '' && (!$('med'+i+'-0').value || error != 0)) {
 			display_status('Does not compute!<br/>Properly input or Calculate IVs first.');
@@ -1412,7 +1416,7 @@ function display_ivs(rn,plv) { //Displays IVs appropriately
 	var  i=5; do {
 		if (!$('medl').checked) { $('med'+i+'-0').value = ivs[i][Math.ceil(ivs[i].length/2)-1]; }
 		$('plv'+i+'-0').innerHTML = (plv[i][0] == ''?(ivs[i].length == 1?'<span class="ok">OK!</span>':'<span class="tooltip" title="Refine using Hidden Power.">[?]</span>'):'<span class="btn" onclick="row_add(0,'+plv[i][0]+'); $(\'stat0-\'+(rn-1)).focus();">'+plv[i][0]+'</span>')+(plv[i][2] == ''?'':'<br/><span class="eps">'+plv[i][2]+'</span>');
-			
+
 		var ivst = ivs[i].slice();
 		if (plv[i][1]<ivst.length) { ivst[plv[i][1]] = ivst[plv[i][1]]+'</span><span class="tooltip" style="font-size: 0.9em;" title="Lv.'+plv[i][0]+' '+stats[i]+': &lt;strong&gt;'+plv[i][4]+'&lt;/strong&gt;">'; }
 		$('spr'+i+'-0').innerHTML = '<span class="tooltip" style="font-weight: bold;" '+(plv[i][0] == ''?'':'title="Lv.'+plv[i][0]+' '+stats[i]+': &lt;strong&gt;'+plv[i][3]+'&lt;/strong&gt;"')+'>'+ivst.join(', ')+'&nbsp;</span>';
@@ -1431,8 +1435,8 @@ function initO() { //Actions to perform once the page has loaded
 	$('calculator').style.minHeight = (1*(window.innerHeight?window.innerHeight:(document.body?document.body.clientHeight:''))-16)+'px'; /* remove this when including */
 	$('ept').style.visibility = 'hidden';
 	$('mode1').style.display = 'none';
-	toggle($('history'));	
-	
+	toggle($('history'));
+
 	event_add($('name'),"keyup", function () { autocomplete(this,$('species'),'text',true); $('number').value=Math.floor($('species').value); display_base(); row_edit(); });
 	event_add($('name'),"focus", function () { this.value = '' });
 	event_add($('species'),"change", function () { $('name').value=$('species').options[$('species').selectedIndex].text; $('number').value=Math.floor($('species').value); display_base(); row_edit(); });
@@ -1445,7 +1449,7 @@ function initO() { //Actions to perform once the page has loaded
 	event_add($('pkrs'),"click", function () { display_eps(); });
 	event_add($('item'),"change", function () { display_eps(); });
 	event_add($('times'),"keyup", function (evt) { vv('times',0,255,evt); display_eps(); });
-	
+
 	event_add($('level-0'),"keyup", function (evt) { vv('level-0',0,100,evt,0); });
 	event_add($('statlvl'),"keyup", function (evt) { vv('statlvl',0,100,evt); });
 	event_add($('act-0'),"click", function () { row_act(0); });
@@ -1454,20 +1458,20 @@ function initO() { //Actions to perform once the page has loaded
 		event_add($('ep'+i+'-0'),"keyup", function (evt) { vv(this.id,0,255,evt,0); display_eps(); });
 		event_add($('med'+i+'-0'),"keyup", function (evt) { vv(this.id,0,31,evt); });
 	} while(i--);
-		
-	event_add($('pot0'),"change", function () { row_edit(); });	
+
+	event_add($('pot0'),"change", function () { row_edit(); });
 	if (navigator.userAgent.indexOf('AppleWebKit') > -1) { $('pot1').style.height = '18px'; } //workaround for Webkit, Chrome issue 41759
 	event_add($('pot1'),"focus", function () { this.size=7; this.style.position='absolute'; this.style.width='88px'; this.style.height='auto'; });
 	event_add($('pot1'),"blur", function () { this.size=7; this.style.position='absolute'; this.style.width='88px'; this.style.height='18px'; });
 	event_add($('pot1'),"blur", function () { row_edit(); this.size=1; this.style.position=''; this.style.width='78px'; });
 	event_add($('pot2'),"change", function () { row_edit(); });
-	
+
 	event_add($('btn-addrow'),"click", function () { row_add(); $((mode?'name':'stat0-'+(rn-1))).focus(); tooltips(); });
 	event_add($('btn-addeps'),"click", add_eps);
 	event_add($('btn-theme'),"click", toggle_theme);
 	event_add($('btn-eps'),"click", function () { calc_eps(); });
 	event_add($('btn-evs'),"click", toggle_evs);
-	event_add($('btn-mode'),"click", function () { toggle_mode(mode); });	
+	event_add($('btn-mode'),"click", function () { toggle_mode(mode); });
 	event_add($('btn-save'),"click", code_save);
 	event_add($('btn-ivs'),"click", function () { calc_ivs((mode==2 && act>-1?act:0)); tooltips(); });
 	event_add($('btn-stats'),"click", function () { display_stats((act>-1?act:0)); });
@@ -1477,7 +1481,7 @@ function initO() { //Actions to perform once the page has loaded
 	event_add($('toggleinfo'),"click", function () { toggle($('info')); toggle($('instructions')); });
 	event_add($('toggleinstructions'),"click", function () { toggle($('info')); toggle($('instructions')); });
 	event_add($('togglehistory'),"click", function () { toggle($('history')); });
-			
+
 	var tload;
 	event_add($('btn-load'),"click", function(){
 		if(tload){
@@ -1490,24 +1494,24 @@ function initO() { //Actions to perform once the page has loaded
 			code_load(location.search);
 		},300);
 	});
-	
+
 	pop_species();
 	display_base();
-	
+
 	if (location.protocol != 'data:') {
 		var br = navigator.userAgent;
 		if (br.indexOf('iPhone') > -1 || br.indexOf('iPod') > -1 || br.indexOf('iPad') > -1) {
 		$('download').innerHTML = "Hello dear &#63743; fan! You can <strong>save</strong> (really) this page, for offline use, by <a href=\"javascript:x=new XMLHttpRequest();x.onreadystatechange=function(){if(x.readyState==4)location='data:text/html;charset=utf-8;base64,'+btoa(unescape(encodeURIComponent(x.responseText)))};x.open('GET',location);x.send('');\">clicking here</a> and bookmarking after the redirect!";  }
 	}
-	
+
 	$('name').focus();
 	if (location.search.indexOf('sc=') > -1) { $('btn-load').value+='*'; $('btn-load').focus(); } //Make SavedCose visible
-	
+
 	if ((document.charset && document.charset.toLowerCase() != 'utf-8') || (document.characterSet && document.characterSet.toLowerCase() != 'utf-8')) {
 		display_status('<span class="error">Please set your browser’s encoding to UTF-8 or this tool may not work as expected.</span>');
 	}
 	else if (pk.length != mn.unique().length) {
-		display_status('<span class="error">Calculator data has been corrupted.</span><br>Please use the <a href="http://legendarypkmn.github.io/ivcalcxy.html">original version</a>.</span>');
+		display_status('<span class="error">Calculator data has been corrupted.</span><br>Please use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">original version</a>.</span>');
 	}
 	else {
 		display_status('Run Without Error.<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>');
@@ -1567,7 +1571,7 @@ event_add(window,"load", init0);
 </select></td>
 </tr>
 <tr class="ext"><td colspan="2"><h4>Type:</h4></td><td id="types" colspan="3" class="left"></td><td colspan="2"><h4>Egg Group:</h4></td><td id="eggs" colspan="3" class="left"></td></tr>
-<tr class="ext"><td colspan="7"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; (Diamond/Pearl onwards).">Characteristic *</h2></td><td colspan="3"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Hidden Power psychic in Anistar City (XY) or Fortree City (ORAS).">Hidden Power *</h2></td></tr>
+<tr class="ext"><td colspan="7"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt;">Characteristic *</h2></td><td colspan="3"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Hidden Power psychic in Anistar City (X/Y) or Fortree City (OR/AS).">Hidden Power *</h2></td></tr>
 <tr class="ext"><td colspan="3"><input type="text" id="charn" name="charn" class="left" /></td><td colspan="4">
 <select id="char" name="char">
 	<option value="-1"> </option>
@@ -1575,7 +1579,7 @@ event_add(window,"load", init0);
 	<option value="5.1">Alert to sounds</option>
 	<option value="2.1">Capable of taking hits</option>
 	<option value="2.3">Good endurance</option>
-	<option value="2.4">Good perseverence</option>
+	<option value="2.4">Good perseverance</option>
 	<option value="4.3">Hates to lose</option>
 	<option value="3.0">Highly curious</option>
 	<option value="2.2">Highly persistent</option>
@@ -1628,7 +1632,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 	<option value="9">Water</option>
 </select></td>
 </tr>
-<tr class="ext tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Stat Judge inside the Pokémon Center in Kiloude City (XY) or the Battle Resort (ORAS)."><td colspan="5"><h2>Overall Potential *</h2></td><td colspan="5"><h2>Best Stat(s) *</h2></td></tr>
+<tr class="ext tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Stats Judge inside the Pokémon Center in Kiloude City (X/Y) or the Battle Resort (OR/AS)."><td colspan="5"><h2>Overall Potential *</h2></td><td colspan="5"><h2>Best Stat(s) *</h2></td></tr>
 <tr class="ext">
 <td colspan="5"><select name="pot0" id="pot0">
 	<option value="-1"> </option>
@@ -1645,7 +1649,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 	<option value="3">Sp. Attack</option>
 	<option value="4">Sp. Defense</option>
 	<option value="5">Speed</option>
-</select>	
+</select>
 </td>
 <td colspan="3"><select name="pot2" id="pot2">
 	<option value="-1"> </option>
@@ -1764,12 +1768,12 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 </td></tr>
 <tr class="ext"><td id="bar" class="secondary">
 <table>
-<tr><td id="sprite" colspan="4" rowspan="5"></td><td colspan="7"><h2 class="tooltip" title="Ability effects are ignored.">Damage Taken</h2></td></tr>
+<tr><td id="sprite" colspan="4" rowspan="5"></td><td colspan="6"><h2 class="tooltip" title="Ability effects are ignored.">Damage Taken</h2></td></tr>
 <tr><td><h4>&times;0</h4></td><td colspan="5" id="dmg0" class="left"></td></tr>
 <tr><td><h4>&times;&frac14;</h4></td><td colspan="5" id="dmg1" class="left"></td></tr>
 <tr><td><h4>&times;&frac12;</h4></td><td colspan="5" id="dmg2" class="left"></td></tr>
 <tr><td><h4>&times;2</h4></td><td colspan="5" id="dmg8" class="left"></td></tr>
-<tr><td colspan="4"><input type="text" name="nickname" id="nickname" maxlength="10" size="10" class="center tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt;  Pokémon's nickname" /></td>
+<tr><td colspan="4"><input type="text" name="nickname" id="nickname" maxlength="12" size="12" class="center tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt;  Pokémon's nickname" /></td>
 	<td><h4>&times;4</h4></td><td colspan="5" id="dmg16" class="left"></td></tr>
 </table>
 </td>
@@ -1812,10 +1816,11 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <h3>How to download this calculator</h3>
 <p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
 <h3>Compatible with:</h3>
-<p>Several Pokémon have had their Base Stats changed in <strong>Pokémon X &amp; Y, Omega Ruby &amp; Alpha Sapphire</strong>; therefore, this calculator is incompatible with previous games. However, you can use the <a href="http://legendarypkmn.github.io/javacalc.html">Advanced Individual Value &amp; Stat Calculator</a> instead.</p>
-<p>In addition, several Pokémon have had their Base Stats changed in <strong>Pokémon Sun &amp; Moon</strong>; therefore, this calculator is incompatible with those games. However, you can use the <a href="http://legendarypkmn.github.io/ivcalcsm.html">Sun &amp; Moon Value &amp; Stat Calculator</a> instead.</p>
+<p>Pokémon X, Y, Omega Ruby, Alpha Sapphire for the <em>Nintendo 3DS</em>.</p>
+<p>Several Pokémon have had their Base Stats changed in <strong>Pokémon X &amp; Y, Omega Ruby &amp; Alpha Sapphire</strong>; therefore, this calculator is incompatible with previous games. However, you can use the <a href="https://legendarypkmn.github.io/javacalc.html">Advanced Individual Value &amp; Stat Calculator</a> instead.</p>
+<p>In addition, several Pokémon have had their Base Stats changed in <strong>Pokémon Sun &amp; Moon</strong>; therefore, this calculator is incompatible with those games. However, you can use the <a href="https://legendarypkmn.github.io/ivcalcsm.html">Sun &amp; Moon Value &amp; Stat Calculator</a> instead.</p>
 <h3>About</h3>
-<p>This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by <a href="http://heracl.es">Heracles Papatheodorou a.k.a Arty2</a>, webmaster of <a href="https://legendarypkmn.net" id="lp">Legendary Pokémon</a>. It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.</p>
+<p>This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by <a href="http://heracl.es">Heracles Papatheodorou a.k.a Arty2</a>, webmaster of <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>. It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.</p>
 <p>It's written in <strong>JavaScript</strong> to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It <em>should</em> work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo DSi.</p>
 <p>If you want to translate, modify this program or include it in your website, please read the License provided below.</p>
 <p>Documentation and extras can be found on <a href="https://github.com/LegendaryPKMN/ivcalc">this project’s page on GitHub</a>.</p>
@@ -1823,25 +1828,23 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
-	<dt>Version 1.4+/ja (11/November/2016)</dt>
-	<dd>Update for Sun/Moon.</dd>
+  <dt>Version 1.4+/ja (11/November/2016)</dt>
+    <dd>Update for Sun/Moon.</dd>
 </dl>
 <dl id="history">
-	<dt>Version 1.4 (15/September/2016)</dt>
-	<dd>Rebranding for LegendaryPKMN .net.</dd>
-	<dt>Version 1.3 (09/September/2016)</dt>
-	<dd>Data corruption check, and several bug fixes.</dd>
-	<dt>Version 1.2+/ja (31/August/2015)</dt>
-	<dd>re-translated from <a href="http://pokemonwiki.com/status/ivcalc.html">Japanese version</a> on ポケモンWiki.</dd>
-	<dd>Added Hoopa Unbound, Primal Reversions, new Mega Evolutions from ORAS.</dd>
-	<dt>Version 1.2 (20/September/2014)</dt>
-	<dd>Added remaining event Pokémon and forms from X/Y.</dd>
-	<dt>Version 1.1 (20/November/2013)</dt>
-	<dd>Fixed some errors with the stat database.</dd>
-	<dt>Version 1 (19/November/2013)</dt>
-	<dd>Forked from the <a href="http://legendarypkmn.github.io/javacalc.html">Advanced IV Calculator</a> and tailored to Pokémon X &amp; Y.</dd>
-	<dt>Version 1.0beta (14/September/2004)</dt>
-	<dd>First public release.</dd>
+  <dt>Version 1.4 (15/September/2016)</dt>
+    <dd>Rebranding for LegendaryPKMN .net.</dd>
+  <dt>Version 1.3 (09/September/2016)</dt>
+    <dd>Data corruption check, and several bug fixes.</dd>
+  <dt>Version 1.2+/ja (31/August/2015)</dt>
+    <dd>re-translated from <a href="http://pokemonwiki.com/status/ivcalc.html">Japanese version</a> on ポケモンWiki.</dd>
+    <dd>Added Hoopa Unbound, Primal Reversions, new Mega Evolutions from ORAS.</dd>
+  <dt>Version 1.2 (20/September/2014)</dt>
+    <dd>Added remaining event Pokémon and forms from X/Y.</dd>
+  <dt>Version 1.1 (20/November/2013)</dt>
+    <dd>Fixed some errors with the stat database.</dd>
+  <dt>Version 1 (19/November/2013)</dt>
+    <dd>Forked from the <a href="https://legendarypkmn.github.io/javacalc.html">Advanced IV Calculator</a> and tailored to Pokémon X &amp; Y.</dd>
 </dl>
 
 <h2>License</h2>
@@ -1877,8 +1880,9 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 	<h3>IV Calculation <span class="ext btn" onclick="toggle_simple();">(make it look simpler?)</span></h3>
 		<p>* Fields marked with an asterisk are optional.</p>
 		<p class="center ok">ALWAYS TRACK YOUR EFFORT POINTS!</p>
-		<p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! If necessary, feed them as many <em>anti-vitamin</em> berries as necessary, or simply use a <em>Reset Bag</em> in <em>Super Training</em> to erase all their EVs.</p>
-		<p>The <em>Stat Judge</em> is located in Kiloude City (X &amp; Y) or the Battle Resort (Omega Ruby &amp; Alpha Sapphire), right inside the Pokémon Center. He can tell you the potential of your Pokémon and the stats with the highest IV. He will also notify you of any zero IVs. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
+		<p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! To reset their Effort Points, feed them as many <em>anti-vitamin</em> berries as necessary, or simply use a <em>Reset Bag</em> in <em>Super Training</em> to erase all their EPs.</p>
+		<p>The <em>Stat Judge</em> can tell you the potential of your Pokémon and the stats with the highest IV. He is located in Kiloude City (X &amp; Y) or the Battle Resort (Omega Ruby &amp; Alpha Sapphire), right inside the Pokémon Center.</p>
+		<p>He will notify you if there's a tie in the highest IV, and he will also notify you of any zero IVs. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
 		<p>You can practically get 100% accurate results at level 20, using just a few Rare Candies; save beforehand if you'd like to keep them of course.</p>
 		<p><strong>Single mode:</strong> The higher your Pokémon's level, the more accurate the results. If you want to calculate a low level one, then input the optional information and additional row data by leveling-up, evolving it or changing forme. The <em>+Lv.</em> and <em>+EPs</em> indicators, tell you how many additional levels or Effort Points (same level) respectively are required to refine the resulting IV spread. Stats of alternate forms and Mega Evolutions can also improve your calculations.</p>
 	<div class="ext">
@@ -1886,9 +1890,8 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 		<p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
 	<h3>Stat Calculation</h3><p> Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
 	<h3>Hidden Power Calculation</h3>
-		<p>Hidden Power's type depends on a Pokémon's IVs, but if you know its type already, it can help in calculating them.</p>
-		<p>The Kalos (XY) <em>Hidden Power psychic</em> lives in Anistar City, second house to the East, starting from the Pokémon Center.</p>
-		<p>The Hoenn (ORAS) <em>Hidden Power psychic</em> lives in Fortree City, third northern house from the east.</p>
+		<p>Hidden Power's type depends on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
+		<p>The <em>Hidden Power psychic</em> lets you know exactly what type Hidden Power will be for a Pokémon. The psychic is located inside the second house to the east of Anistar City's Pokémon Center in X &amp; Y; and the second northern house to the east of Fortree City's Pokémon Center in Omega Ruby &amp; Alpha Sapphire.</p>
 		<p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
 	<h3>EV training tools</h3><dl>
 		<dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
