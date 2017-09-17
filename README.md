@@ -1,11 +1,11 @@
 Individual Value & Stat Calculator
 ===================================
 
-:warning: If you came to this page by mistake and you only want to use the calculator, [click here!](http://legendarypkmn.github.io/ivcalcxy.html)
+:warning: If you came to this page by mistake and you only want to use the calculator, [click here!](https://legendarypkmn.github.io/ivcalcsm.html)
 
 This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by [Heracles Papatheodorou a.k.a Arty2](http://www.twitter.com/Arty2), webmaster of [LegendaryPKMN](http://www.legendarypkmn.net/). It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.
 
-It's written in JavaScript to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It should work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo DSi.
+It's written in JavaScript to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It should work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo 3DS.
 
 ## To do
 
