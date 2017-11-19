@@ -240,6 +240,7 @@ body {
 	color: #000;
 }
 #calculator #sprite img {
+	/*image-rendering: pixelated;*/
 	max-height: 120px;
 	max-width: 120px;
 }
@@ -310,7 +311,7 @@ body {
 <!--//--><![CDATA[//><!--
 /* Generic functions */
 
-function $() { // http://www.dustindiaz.com/top-ten-javascript/
+function $() {
 	var elements = [];
 	for (var i=0, j=arguments.length; i < j; i++) {
 		var element = arguments[i];
@@ -331,14 +332,14 @@ function $c(classname, node) { //Get elements by class
 		if(re.test(els[i].className))a.push(els[i]);
 	return a;
 }
-function event_add(obj,type,fn) { // http://www.dustindiaz.com
+function event_add(obj,type,fn) {
 	if (obj.addEventListener)	obj.addEventListener(type,fn,false );
 	else if (obj.attachEvent) {
 		obj["e"+type+fn] = fn;
 		obj.attachEvent( "on"+type, function() { obj["e"+type+fn](); } );
 	}
 }
-function event_del(obj,type,fn) { // http://www.dustindiaz.com
+function event_del(obj,type,fn) {
 	if (obj.removeEventListener) obj.removeEventListener(type,fn,false);
 	else if (obj.detachEvent) {
 		obj.detachEvent( "on"+type, obj["e"+type+fn] );
@@ -456,7 +457,7 @@ function array_intersect(a, b) { //arrays must be sorted, a and b are destructed
 	return r;
 }
 if (!Array.prototype.map) {
-	Array.prototype.map = function(fn, thisObj) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.map = function(fn, thisObj) {
 		var scope = thisObj || window;
 		var a = [];
 		for (var i=0, j=this.length; i < j; ++i) {
@@ -466,7 +467,7 @@ if (!Array.prototype.map) {
 	};
 }
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(el, start) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.indexOf = function(el, start) {
 		var start = start || 0;
 		for (var i=0, j=this.length; i < j; ++i) { //rewrite using while do?
 			if (this[i] === el ) {
@@ -1814,20 +1815,21 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <table><tr><td class="primary">
 <h2 id="toggleinfo">Program information &#177;</h2>
 <div id="info">
+<h3>Compatible with:</h3>
+<p>Pokémon Sun &amp; Moon, Ultra Sun &amp; Ultra Moon for the <em>Nintendo 3DS</em>.</p>
+<p>Several Pokémon have had their Base Stats changed in <strong>Pokémon Sun &amp; Moon</strong>; therefore, this calculator is incompatible with previous games. However, you can use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">XY Individual Value &amp; Stat Calculator</a> and <a href="https://legendarypkmn.github.io/javacalc.html">Advanced Individual Value &amp; Stat Calculator</a> instead.</p>
+
 <h3>How to download this calculator</h3>
 <p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
-<h3>Compatible with:</h3>
-<p>Pokémon Sun &amp; Moon for the <em>Nintendo 3DS</em>.</p>
-<p>Several Pokémon have had their Base Stats changed in <strong>Pokémon Sun &amp; Moon</strong>; therefore, this calculator is incompatible with previous games. However, you can use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">XY Individual Value &amp; Stat Calculator</a> and <a href="https://legendarypkmn.github.io/javacalc.html">Advanced Individual Value &amp; Stat Calculator</a> instead.</p>
-<h3>About</h3>
-<p>This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by <a href="http://heracl.es">Heracles Papatheodorou a.k.a Arty2</a>, webmaster of <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>. It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.</p>
-<p>It's written in <strong>JavaScript</strong> to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It <em>should</em> work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo 3DS.</p>
-<p>If you want to translate, modify this program or include it in your website, please read the License provided below.</p>
-<p>Documentation and extras can be found on <a href="https://github.com/LegendaryPKMN/ivcalc">this project’s page on GitHub</a>.</p>
+
+<h3>Credits</h3>
+<p>This tool is maintained collaboratively on <a href="https://github.com/LegendaryPKMN/ivcalc/graphs/contributors">GitHub</a> where further documentation and extras can be found. Originally written for <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>.</p>
 
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
+  <dt>Version 20171119</dt>
+    <dd>Updated for Ultra Sun &amp; Ultra Moon, several bug fixes.</dd>
   <dt>Version 1+/ja (09/November/2017)</dt>
     <dd>Added Ultra Sun &amp; Ultra Moon data.</dd>
   <dt>Version 1 (19/November/2016)</dt>
@@ -1837,6 +1839,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 </dl>
 
 <h2>License</h2>
+<p>If you want to translate, modify this program or include it in your website, please read the License provided below. The program's author would be glad if notified about your modifications, including translations.</p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons License</a> and modification of this program's credits is <strong>prohibited</strong>.</p>
 <dl>
 <dt>You are free:</dt>
@@ -1848,8 +1851,6 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <dd><strong>Noncommercial</strong> — You may not use this work for commercial purposes.</dd>
 <dd><strong>Share Alike</strong> — If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.</dd>
 </dl>
-<p>Kudos to <a href="http://www.dustindiaz.com/">Dustin Diaz</a> for some of his amazing functions.</p>
-<p>The program's author would be glad if notified about your modifications, including translations.</p>
 <h2>Disclaimer</h2>
 <p>Pokémon and related characters are &copy; Nintendo, Creatures, Game Freak and Pokémon Inc. This unofficial, fan-made program is not endorsed by any of the above companies.</p>
 </div>
@@ -1858,9 +1859,10 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <td class="secondary">
 <h2 id="toggleinstructions">Instructions &#177;</h2>
 	<div id="instructions">
-	<h3>What are IVs and EPs?</h3>
-		<p>If such terms <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a <a href="https://legendarypkmn.net/training">Pokémon Training Guide</a> before using this tool.</p>
-		<p>Here's some examples: <a href="javascript:code_load('?sc=0,0,1,0,Sepultura! 9,18,22,7,22,8,100! 6,45,129,79,85,106,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1! 6.1,45,129,117,114,125,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1')">Charizard</a>, <a href="javascript:code_load('?sc=0,0,1,0,! 31,6,10,28,6,1,100! 257,85,271,265,144,207,139,168,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257.1,85,271,339,161,238,156,202,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257,85,257,235,132,193,129,141,0,0,0,0,0,0,14,0.1,-1,0,0,3')">Blaziken</a></p>
+	<h3>About</h3>
+		<p>This calculator allows the reverse calculation of any Pokémon's Individual Values when given the Pokémon's details. It can also calculate stats at any given level and deduce a Pokémon's Hidden Power type and power.</p>
+		<p>If terms such as IVs and EPs <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a Pokémon Training Guide before using this tool.</p>
+		<p>Here's some example use cases: <a href="javascript:code_load('?sc=0,0,1,0,Sepultura! 9,18,22,7,22,8,100! 6,45,129,79,85,106,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1! 6.1,45,129,117,114,125,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1')">Charizard</a>, <a href="javascript:code_load('?sc=0,0,1,0,! 31,6,10,28,6,1,100! 257,85,271,265,144,207,139,168,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257.1,85,271,339,161,238,156,202,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257,85,257,235,132,193,129,141,0,0,0,0,0,0,14,0.1,-1,0,0,3')">Blaziken</a></p>
 	<h3>User Interface</h3>
 	<dl>
 		<dt>Save</dt><dd>Generates a SaveCode and a link (URL) that you can keep in your bookmarks or send to a friend.</dd>
@@ -1890,9 +1892,9 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 </div></td>
 </tr>
 <tr><td class="primary">
-Your feedback and criticism is very important! <p class="center">Please <a class="tooltip" id="contact" href="https://legendarypkmn.net/contact?topic=IV%20Calculator" title="Click [Save] before reporting a bug.">contact the author</a> for all errors or requests.</p>
+<p class="center">Your feedback and criticism is very important!<br><a href="https://github.com/LegendaryPKMN/ivcalc/issues">Please report any bugs or requests on GitHub.</a></p>
 </td>
-<td class="secondary">courtesy of <a href="https://legendarypkmn.net">LegendaryPKMN .net</a>
+<td class="secondary"></a>
 </td></tr>
 </table>
 </div><!-- end documentation -->
