@@ -240,6 +240,7 @@ body {
 	color: #000;
 }
 #calculator #sprite img {
+	/*image-rendering: pixelated;*/
 	max-height: 120px;
 	max-width: 120px;
 }
@@ -310,7 +311,7 @@ body {
 <!--//--><![CDATA[//><!--
 /* Generic functions */
 
-function $() { // http://www.dustindiaz.com/top-ten-javascript/
+function $() {
 	var elements = [];
 	for (var i=0, j=arguments.length; i < j; i++) {
 		var element = arguments[i];
@@ -331,14 +332,14 @@ function $c(classname, node) { //Get elements by class
 		if(re.test(els[i].className))a.push(els[i]);
 	return a;
 }
-function event_add(obj,type,fn) { // http://www.dustindiaz.com
+function event_add(obj,type,fn) {
 	if (obj.addEventListener)	obj.addEventListener(type,fn,false );
 	else if (obj.attachEvent) {
 		obj["e"+type+fn] = fn;
 		obj.attachEvent( "on"+type, function() { obj["e"+type+fn](); } );
 	}
 }
-function event_del(obj,type,fn) { // http://www.dustindiaz.com
+function event_del(obj,type,fn) {
 	if (obj.removeEventListener) obj.removeEventListener(type,fn,false);
 	else if (obj.detachEvent) {
 		obj.detachEvent( "on"+type, obj["e"+type+fn] );
@@ -456,7 +457,7 @@ function array_intersect(a, b) { //arrays must be sorted, a and b are destructed
 	return r;
 }
 if (!Array.prototype.map) {
-	Array.prototype.map = function(fn, thisObj) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.map = function(fn, thisObj) {
 		var scope = thisObj || window;
 		var a = [];
 		for (var i=0, j=this.length; i < j; ++i) {
@@ -466,7 +467,7 @@ if (!Array.prototype.map) {
 	};
 }
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(el, start) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.indexOf = function(el, start) {
 		var start = start || 0;
 		for (var i=0, j=this.length; i < j; ++i) { //rewrite using while do?
 			if (this[i] === el ) {
@@ -551,7 +552,7 @@ function pop_species() { //Populates the species list
 	var i=0,j=pkmns.length; do {
 		var b = pkmns[i].split(':');
 		var c = el_add(a,"option",{value:b[1]},b[0]);
-		if ((b[1]>493 && b[1]<=649) || b[1]>664) { c.className = 'new'; }
+		if ((b[1]>493 && b[1]<=649) || b[1]>664) { c.className = 'new'; } //show new species
 		i++;
 	} while (i<j);
 	$('species').appendChild(a);
@@ -566,7 +567,7 @@ function online_check() { //Checks if there's an internet connection alive
 		//Version Check - DO NOT change the following
 		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/javacalc.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/javacalc.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'https://legendarypkmn.github.io/javacalc_9.8.4.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/javacalc_20171130.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
@@ -1784,84 +1785,86 @@ event_add(window,"load", init0);
 <table><tr><td class="primary">
 <h2 id="toggleinfo">Program information &#177;</h2>
 <div id="info">
-<h3>How to download this calculator</h3>
-<p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
 <h3>Compatible with:</h3>
 <p>Pokémon Ruby, Sapphire, Emerald, FireRed, LeafGreen, Diamond, Pearl, Platinum, HeartGold, SoulSilver, Black, White, Black 2, White 2 for the <em>Nintendo DS</em> and Pokémon Colosseum, XD, Battle Revolution for the <em>Nintendo Wii</em>.</p>
 <p>Several Pokémon have had their Base Stats changed in <strong>Pokémon X &amp; Y, Omega Ruby &amp; Alpha Sapphire</strong>; therefore, this calculator is incompatible with those games. However, you can use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">XY Individual Value &amp; Stat Calculator</a> instead.</p>
-<h3>About</h3>
-<p>This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by <a href="http://heracl.es">Heracles Papatheodorou a.k.a Arty2</a>, webmaster of <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>. It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.</p>
-<p>It's written in <strong>JavaScript</strong> to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It <em>should</em> work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo 3DS.</p>
-<p>If you want to translate, modify this program or include it in your website, please read the License provided below.</p>
-<p>Documentation and extras can be found on <a href="https://github.com/LegendaryPKMN/ivcalc">this project’s page on GitHub</a>.</p>
+
+<h3>How to download this calculator</h3>
+<p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
+
+<h3>Credits</h3>
+<p>This tool is maintained collaboratively on <a href="https://github.com/LegendaryPKMN/ivcalc/graphs/contributors">GitHub</a> where further documentation and extras can be found. Originally written for <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>.</p>
 
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
- <dt>Version 9.8.4 (15/September/2016)</dt>
-        <dd>Rebranding for LegendaryPKMN .net.</dd>
+  <dt>Version 20171130 (30/November/2017)</dt>
+    <dd>Various tweaks and fixes.</dd>
 </dl>
 <dl id="history">
- <dt>Version 9.8.3 (19/November/2013)</dt>
-        <dd>Tweaks in the best stat GUI, to accommodate for a Chrome bug.</dd>
- <dt>Version 9.8.2 (31/August/2012)</dt>
- 	<dd>Added Pokémon Black 2 &amp; White 2 formes.</dd>
- <dt>Version 9.7 (07/October/2010)</dt>
- 	<dd>Fixed some tiny bugs with displaying BW Pokémon, thanks Aries.</dd>
- <dt>Version 9.5 (26/September/2010)</dt>
- 	<dd>Updated for Pokémon Black &amp; White.</dd>
- <dt>Version 9.2 (02/August/2010)</dt>
- 	<dd>Fixed a bug with Characteristics and +Lv.</dd>
- <dt>Version 9.1 (31/July/2010)</dt>
- 	<dd>Fixed a bug with certain base stats.</dd>
- <dt>Version 9 beta (27/July/2010)</dt>
- 	<dd>Multi-Pokémon calculation, support for characteristics, reverse Hidden Power and potential, various improvements and tweaks. Aesthetic changes.</dd>
- <dt>Version 8.1.1 (07/January/2010)</dt>
- 	<dd>Minor change: replaced <em>neat</em> theme with <em>isotope</em>, featuring advanced CSS3 effects.</dd>
- <dt>Version 8.1 (27/July/2009)</dt>
- 	<dd>Added function to allow changing the numeric values using the up/down arrow keys plus an fix for Internet Explorer's TAB behaviour. Some textual changes.</dd>
- <dt>Version 8 (18/June/2009)</dt>
- 	<dd>Effort Point data and EV training tools, Pokémon type affinity, input validation, online status detection: images automatically enabled &amp; Version Checker. Some textual changes.</dd>
- <dt>Version 7.9.2 (23/October/2008)</dt>
- 	<dd>Fixed IE-killer conflict with the error indicator. Thanks to EliteRaptor for reporting it.</dd>
- <dt>Version 7.9 (08/October/2008)</dt>
- 	<dd>Added Platinum data. Added inaccurate input indicators. Fixed the Save function and an issue with Porygon-Z. The themes' container has changed and the "ppn" theme was replaced by "neat".</dd>
- <dt>Version 7.8 (04/September/2007)</dt>
- 	<dd>Small bug fixes.</dd>
- <dt>Version 7.6 (20/June/2007)</dt>
- 	<dd>Fixed Hidden Power calculation bug.</dd>
- <dt>Version 7.5 (24/May/2007)</dt>
- 	<dd>No more off-range IVs; that was a feature that alerted the user if the input was inaccurate but it seems like people were getting confused and it was therefore removed.</dd>
- <dt>Version 7.4 (11/May/2007)</dt>
- 	<dd>Many bugfixes; re-added Deoxys and Wormadam alternate forms.</dd>
- <dt>Version 7.1 (19/March/2007)</dt>
- 	<dd>Updated all names to english Diamond &amp; Pearl Pokémon names.</dd>
- <dt>Version 7 "Tagsoup" (24/February/2007)</dt>
- 	<dd>Theme system added, new Save feature; older Saves are incompatible. <a href="https://legendarypkmn.net/2007/02/24/English/new-version-of-the-individual-value-calculator">Read more...</a></dd>
- <dt>Version 7 "Tagsoup" beta (10/February/2007)</dt>
- 	<dd>Completely rewritten hence the version jump; new GUI, functions and underlying code. A lot of thanks to Brett Harris for improving some of the IV calculation functions used in the previous version. First public beta.</dd>
- <dt>Version 5 (02/November/2006)</dt>
- 	<dd>Added Diamond &amp; Pearl data.</dd>
- <dt>Version 4.1 (07/October/2005)</dt>
- 	<dd>Corrected minor bugs.</dd>
- <dt>Version 4 (05/October/2005)</dt>
- 	<dd>Major changes to the User Interface. Save and Load functions. Online features. Print-friendly styles.</dd>
- <dt>Version 3.1 (01/June/2005)</dt>
- 	<dd>Small changes to the CSS. Added auto-complete dropdown list function. Try typing the Pokémon's name or nature in the dropdown lists if you want quick access to a Pokémon or Nature.</dd>
- <dt>Version 3 (17/May/2005)</dt>
- 	<dd>A version jump this time, as the Program also calculates Stats now. Various small changes to the CSS code and validation of the "precision".</dd>
- <dt>Version 2.1.3 (16/May/2005)</dt>
- 	<dd>Fixed a small typographic bug (Cheerful instead of careful).</dd>
- <dt>Version 2.1.2 (09/December/2004)</dt>
- 	<dd>Changed "Defence" to "Defense".</dd>
- <dt>Version 2.1 (03/December/2004)</dt>
- 	<dd>Added a show/hide function, corrected some words.</dd>
- <dt>Version 2.0 (05/November/2004)</dt>
- 	<dd>Various changes to the code (now fits in 800x600 screens). Multiple Deoxys added.</dd>
- <dt>Version 1.0beta (14/September/2004)</dt>
- 	<dd>First public release.</dd>
+  <dt>Version 9.8.4 (15/September/2016)</dt>
+    <dd>Rebranding for LegendaryPKMN .net.</dd>
+  <dt>Version 9.8.3 (19/November/2013)</dt>
+    <dd>Tweaks in the best stat GUI, to accommodate for a Chrome bug.</dd>
+  <dt>Version 9.8.2 (31/August/2012)</dt>
+    <dd>Added Pokémon Black 2 &amp; White 2 formes.</dd>
+  <dt>Version 9.7 (07/October/2010)</dt>
+    <dd>Fixed some tiny bugs with displaying BW Pokémon, thanks Aries.</dd>
+  <dt>Version 9.5 (26/September/2010)</dt>
+    <dd>Updated for Pokémon Black &amp; White.</dd>
+  <dt>Version 9.2 (02/August/2010)</dt>
+    <dd>Fixed a bug with Characteristics and +Lv.</dd>
+  <dt>Version 9.1 (31/July/2010)</dt>
+    <dd>Fixed a bug with certain base stats.</dd>
+  <dt>Version 9 beta (27/July/2010)</dt>
+    <dd>Multi-Pokémon calculation, support for characteristics, reverse Hidden Power and potential, various improvements and tweaks. Aesthetic changes.</dd>
+  <dt>Version 8.1.1 (07/January/2010)</dt>
+    <dd>Minor change: replaced <em>neat</em> theme with <em>isotope</em>, featuring advanced CSS3 effects.</dd>
+  <dt>Version 8.1 (27/July/2009)</dt>
+    <dd>Added function to allow changing the numeric values using the up/down arrow keys plus an fix for Internet Explorer's TAB behaviour. Some textual changes.</dd>
+  <dt>Version 8 (18/June/2009)</dt>
+    <dd>Effort Point data and EV training tools, Pokémon type affinity, input validation, online status detection: images automatically enabled &amp; Version Checker. Some textual changes.</dd>
+  <dt>Version 7.9.2 (23/October/2008)</dt>
+    <dd>Fixed IE-killer conflict with the error indicator. Thanks to EliteRaptor for reporting it.</dd>
+  <dt>Version 7.9 (08/October/2008)</dt>
+    <dd>Added Platinum data. Added inaccurate input indicators. Fixed the Save function and an issue with Porygon-Z. The themes' container has changed and the "ppn" theme was replaced by "neat".</dd>
+  <dt>Version 7.8 (04/September/2007)</dt>
+    <dd>Small bug fixes.</dd>
+  <dt>Version 7.6 (20/June/2007)</dt>
+    <dd>Fixed Hidden Power calculation bug.</dd>
+  <dt>Version 7.5 (24/May/2007)</dt>
+    <dd>No more off-range IVs; that was a feature that alerted the user if the input was inaccurate but it seems like people were getting confused and it was therefore removed.</dd>
+  <dt>Version 7.4 (11/May/2007)</dt>
+    <dd>Many bugfixes; re-added Deoxys and Wormadam alternate forms.</dd>
+  <dt>Version 7.1 (19/March/2007)</dt>
+    <dd>Updated all names to english Diamond &amp; Pearl Pokémon names.</dd>
+  <dt>Version 7 "Tagsoup" (24/February/2007)</dt>
+    <dd>Theme system added, new Save feature; older Saves are incompatible. <a href="https://legendarypkmn.net/2007/02/24/English/new-version-of-the-individual-value-calculator">Read more...</a></dd>
+  <dt>Version 7 "Tagsoup" beta (10/February/2007)</dt>
+    <dd>Completely rewritten hence the version jump; new GUI, functions and underlying code. A lot of thanks to Brett Harris for improving some of the IV calculation functions used in the previous version. First public beta.</dd>
+  <dt>Version 5 (02/November/2006)</dt>
+    <dd>Added Diamond &amp; Pearl data.</dd>
+  <dt>Version 4.1 (07/October/2005)</dt>
+    <dd>Corrected minor bugs.</dd>
+  <dt>Version 4 (05/October/2005)</dt>
+    <dd>Major changes to the User Interface. Save and Load functions. Online features. Print-friendly styles.</dd>
+  <dt>Version 3.1 (01/June/2005)</dt>
+    <dd>Small changes to the CSS. Added auto-complete dropdown list function. Try typing the Pokémon's name or nature in the dropdown lists if you want quick access to a Pokémon or Nature.</dd>
+  <dt>Version 3 (17/May/2005)</dt>
+    <dd>A version jump this time, as the Program also calculates Stats now. Various small changes to the CSS code and validation of the "precision".</dd>
+  <dt>Version 2.1.3 (16/May/2005)</dt>
+    <dd>Fixed a small typographic bug (Cheerful instead of careful).</dd>
+  <dt>Version 2.1.2 (09/December/2004)</dt>
+    <dd>Changed "Defence" to "Defense".</dd>
+  <dt>Version 2.1 (03/December/2004)</dt>
+    <dd>Added a show/hide function, corrected some words.</dd>
+  <dt>Version 2.0 (05/November/2004)</dt>
+    <dd>Various changes to the code (now fits in 800x600 screens). Multiple Deoxys added.</dd>
+  <dt>Version 1.0beta (14/September/2004)</dt>
+    <dd>First public release.</dd>
 </dl>
 <h2>License</h2>
+<p>If you want to translate, modify this program or include it in your website, please read the License provided below. The program's author would be glad if notified about your modifications, including translations.</p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons License</a> and modification of this program's credits is <strong>prohibited</strong>.</p>
 <dl>
 <dt>You are free:</dt>
@@ -1873,8 +1876,6 @@ event_add(window,"load", init0);
 <dd><strong>Noncommercial</strong> — You may not use this work for commercial purposes.</dd>
 <dd><strong>Share Alike</strong> — If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.</dd>
 </dl>
-<p>Kudos to <a href="http://www.dustindiaz.com/">Dustin Diaz</a> for some of his amazing functions.</p>
-<p>The program's author would be glad if notified about your modifications, including translations.</p>
 <h2>Disclaimer</h2>
 <p>Pokémon and related characters are &copy; Nintendo, Creatures, Game Freak and Pokémon Inc. This unofficial, fan-made program is not endorsed by any of the above companies.</p>
 </div>
@@ -1882,42 +1883,45 @@ event_add(window,"load", init0);
 </td>
 <td class="secondary">
 <h2 id="toggleinstructions">Instructions &#177;</h2>
- 	<div id="instructions">
-	<h3>What are IVs and EPs?</h3>
-		<p>If such terms <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a <a href="https://legendarypkmn.net/training">Pokémon Training Guide</a> before using this tool.</p>
-		<p>Here's some examples: <a href="javascript:code_load('?sc=0,0,1,0,Shuckie! 15,20,15,20,20,20,100! 213,20,41,13,110,13,101,9,0,0,0,0,0,0,23,5.0,1,-1,5.4.3.1,1! 213,21,42,13,114,13,105,9,0,0,0,0,0,0,23,5.0,1,-1,5.4.3.1,1')">Shuckle</a>, <a href="javascript:code_load('?sc=0,0,1,0,Giratina! 25,8,22,17,4,27,100! 656,26,120,70,69,72,58,52,0,0,0,0,0,0,23,5.2,5,-1,,-1! 487,26,120,59,80,61,68,52,0,0,0,0,0,0,23,5.2,5,-1,,-1')">Giratina</a>, <a href="javascript:code_load('?sc=0,0,0,0,SNOR!3,8,1,5,21,25,100!143,50,221,130,63,72,125,47,0,0,0,0,0,0,10,5.0,14!143,51,225,133,63,73,127,48,0,0,0,0,0,0,10,5.0,14!143,52,229,135,65,75,130,49,0,0,0,0,0,0,10,5.0,14!143,53,234,137,66,76,132,50,0,0,0,0,0,0,10,5.0,14')">Snorlax</a> and a <a href="javascript:code_load('?sc=0,0,0,1,TheGame!30,7,26,6,26,21,100!384,50,179,169,118,158,91,110,0,0,0,0,0,0,19,1.4,-1!220,21,56,31,26,18,20,29,0,0,0,0,0,0,2,1.1,-1!142,20,68,57,31,33,36,53,0,0,0,0,0,0,22,0.0,-1!143,50,221,130,63,72,125,47,0,0,0,0,0,0,10,5.0,14!133,1,12,5,6,6,6,6,0,0,0,0,0,0,6,5.0,4!408,20,62,61,23,18,22,32,0,0,0,0,0,0,10,0.0,2')">team</a>.</p>
-	<h3>User Interface</h3>
-	<dl>
-		<dt>Save</dt><dd>Generates a SaveCode and a link (URL) that you can keep in your bookmarks or send to a friend.</dd>
-		<dt>Load</dt><dd>Single click to load the data saved in the URL, or double-click to load any SaveCode.</dd>
-	</dl>
-	<h3>IV Calculation <span class="ext btn" onclick="toggle_simple();">(make it look simpler?)</span></h3>
-		<p>* Fields marked with an asterisk are optional.</p>
-		<p class="center ok">ALWAYS TRACK YOUR EFFORT POINTS!</p>
-		<p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! To reset their Effort Points, feed them as many <em>anti-vitamin</em> berries as necessary.</p>
-		<p>The <em>Stat Judge</em> can tell you the potential of your Pokémon and the stats with the highest IV. He is located in the house north of the Battle Frontier's Pokémon Center in Emerald; near the PC in the Battle Tower's lobby in Platinum and HeartGold &amp; SoulSilver; and across from the entrance inside Nimbasa City's Gear Station in Black &amp; White and Black 2 &amp; White 2.</p>
-		<p>In Emerald, Platinum and HeartGold &amp; SoulSilver, you will need to talk to him multiple times to find out if there's a tie in the highest IV. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
-		<p>You can practically get 100% accurate results at level 20, using just a few Rare Candies; save beforehand if you'd like to keep them of course.</p>
-		<p><strong>Single mode:</strong> The higher your Pokémon's level, the more accurate the results. If you want to calculate a low level one, then input the optional information and additional row data by leveling-up, evolving it or changing forme. The <em>+Lv.</em> and <em>+EPs</em> indicators, tell you how many additional levels or Effort Points (same level) respectively are required to refine the resulting IV spread.</p>
-	<div class="ext">
-		<p><strong>Team mode:</strong> Useful for IV Battles; use this to calculate multiple Pokémon at once. For an IV Battle, gather a team of low level Pokémon and battle with a friend online, forcing them to level 100, then writing down their projected stats.</p>
-		<p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
-	<h3>Stat Calculation</h3><p> Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
-	<h3>Hidden Power Calculation</h3>
-		<p>Hidden Power's type and base power depend on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
-		<p>The <em>Hidden Power guru</em> lets you know exactly what type Hidden Power will be for a Pokémon. The guru is located inside the Veilstone Game Corner Prize Building in Platinum; the Celadon Game Corner Prize Building in HeartGold &amp; SoulSilver; the Mistralton City Pokémon Center in Black &amp; White; and the northwestern exterior stand at the Pokémon World Tournament in Black 2 &amp; White 2. In other games, attacking a Kecleon helps as well.</p>
-		<p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
-	<h3>EP training tools</h3><dl>
-		<dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
-		<dt>EPs Calculation</dt><dd>Particularly useful to competitive battlers.</dd><dd>First calculate your current Pokémon's stats, alter your current stats in the <em>first row</em>, then use this to view how many EPs are required to reach these specific stats.</dd>
-	</dl>
-	</div>
+<div id="instructions">
+  <h3>About</h3>
+    <p>This calculator allows the reverse calculation of any Pokémon's Individual Values when given the Pokémon's details. It can also calculate stats at any given level and deduce a Pokémon's Hidden Power type and power.</p>
+    <p>If terms such as IVs and EPs <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a Pokémon Training Guide before using this tool.</p>
+    <p>Here's some example use cases: <a href="javascript:code_load('?sc=0,0,1,0,Shuckie! 15,20,15,20,20,20,100! 213,20,41,13,110,13,101,9,0,0,0,0,0,0,23,5.0,1,-1,5.4.3.1,1! 213,21,42,13,114,13,105,9,0,0,0,0,0,0,23,5.0,1,-1,5.4.3.1,1')">Shuckle</a>, <a href="javascript:code_load('?sc=0,0,1,0,Giratina! 25,8,22,17,4,27,100! 656,26,120,70,69,72,58,52,0,0,0,0,0,0,23,5.2,5,-1,,-1! 487,26,120,59,80,61,68,52,0,0,0,0,0,0,23,5.2,5,-1,,-1')">Giratina</a>, <a href="javascript:code_load('?sc=0,0,0,0,SNOR!3,8,1,5,21,25,100!143,50,221,130,63,72,125,47,0,0,0,0,0,0,10,5.0,14!143,51,225,133,63,73,127,48,0,0,0,0,0,0,10,5.0,14!143,52,229,135,65,75,130,49,0,0,0,0,0,0,10,5.0,14!143,53,234,137,66,76,132,50,0,0,0,0,0,0,10,5.0,14')">Snorlax</a> and a <a href="javascript:code_load('?sc=0,0,0,1,TheGame!30,7,26,6,26,21,100!384,50,179,169,118,158,91,110,0,0,0,0,0,0,19,1.4,-1!220,21,56,31,26,18,20,29,0,0,0,0,0,0,2,1.1,-1!142,20,68,57,31,33,36,53,0,0,0,0,0,0,22,0.0,-1!143,50,221,130,63,72,125,47,0,0,0,0,0,0,10,5.0,14!133,1,12,5,6,6,6,6,0,0,0,0,0,0,6,5.0,4!408,20,62,61,23,18,22,32,0,0,0,0,0,0,10,0.0,2')">team</a>.</p>
+  <h3>User Interface</h3>
+    <dl>
+      <dt>Save</dt><dd>Generates a SaveCode and a link (URL) that you can keep in your bookmarks or send to a friend.</dd>
+      <dt>Load</dt><dd>Single click to load the data saved in the URL, or double-click to load any SaveCode.</dd>
+    </dl>
+  <h3>IV Calculation <span class="ext btn" onclick="toggle_simple();">(make it look simpler?)</span></h3>
+    <p>* Fields marked with an asterisk are optional.</p>
+    <p class="center ok">ALWAYS TRACK YOUR EFFORT POINTS!</p>
+    <p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! To reset their Effort Points, feed them as many <em>anti-vitamin</em> berries as necessary.</p>
+    <p>The <em>Stat Judge</em> can tell you the potential of your Pokémon and the stats with the highest IV. He is located in the house north of the Battle Frontier's Pokémon Center in Emerald; near the PC in the Battle Tower's lobby in Platinum and HeartGold &amp; SoulSilver; and across from the entrance inside Nimbasa City's Gear Station in Black &amp; White and Black 2 &amp; White 2.</p>
+    <p>In Emerald, Platinum and HeartGold &amp; SoulSilver, you will need to talk to him multiple times to find out if there's a tie in the highest IV. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
+    <p>You can practically get 100% accurate results at level 20, using just a few Rare Candies; save beforehand if you'd like to keep them of course.</p>
+    <p><strong>Single mode:</strong> The higher your Pokémon's level, the more accurate the results. If you want to calculate a low level one, then input the optional information and additional row data by leveling-up, evolving it or changing forme. The <em>+Lv.</em> and <em>+EPs</em> indicators, tell you how many additional levels or Effort Points (same level) respectively are required to refine the resulting IV spread.</p>
+    <div class="ext">
+    <p><strong>Team mode:</strong> Useful for IV Battles; use this to calculate multiple Pokémon at once. For an IV Battle, gather a team of low level Pokémon and battle with a friend online, forcing them to level 100, then writing down their projected stats.</p>
+    <p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
+  <h3>Stat Calculation</h3>
+    <p>Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
+  <h3>Hidden Power Calculation</h3>
+    <p>Hidden Power's type and base power depend on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
+    <p>The <em>Hidden Power guru</em> lets you know exactly what type Hidden Power will be for a Pokémon. The guru is located inside the Veilstone Game Corner Prize Building in Platinum; the Celadon Game Corner Prize Building in HeartGold &amp; SoulSilver; the Mistralton City Pokémon Center in Black &amp; White; and the northwestern exterior stand at the Pokémon World Tournament in Black 2 &amp; White 2. In other games, attacking a Kecleon helps as well.</p>
+    <p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
+  <h3>EP training tools</h3>
+    <dl>
+      <dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
+      <dt>EPs Calculation</dt><dd>Particularly useful to competitive battlers.</dd><dd>First calculate your current Pokémon's stats, alter your current stats in the <em>first row</em>, then use this to view how many EPs are required to reach these specific stats.</dd>
+    </dl>
+  </div>
 </div></td>
 </tr>
 <tr><td class="primary">
-Your feedback and criticism is very important! <p class="center">Please <a class="tooltip" id="contact" href="https://legendarypkmn.net/contact?topic=IV%20Calculator" title="Click [Save] before reporting a bug.">contact the author</a> for all errors or requests.</p>
+<p class="center">Your feedback and criticism is very important!<br /><a href="https://github.com/LegendaryPKMN/ivcalc/issues">Please report any bugs or requests on GitHub.</a></p>
 </td>
-<td class="secondary">courtesy of <a href="https://legendarypkmn.net">LegendaryPKMN .net</a>
+<td class="secondary">
 </td></tr>
 </table>
 </div><!-- end documentation -->
