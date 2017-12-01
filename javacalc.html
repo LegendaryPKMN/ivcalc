@@ -1311,36 +1311,36 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 			var n = (mode==1 && act >-1?$('number-'+rs[i]):$('number')).value*1;
 			var m = n; //get_text('species',n*1) //DSi browser and IE hate this(?)
 			switch(n) { //feel free to change this if you want sprites from your own server
-				case 0: n = 'egg'; break;
-				case 650: n = '386a'; break;
-				case 651: n = '386d'; break;
-				case 652: n = '386s'; break;
-				case 653: n = '413s'; break;
-				case 654: n = '413t'; break;
-				case 655: n = '492s'; break;
-				case 656: n = '487o'; break;
-				case 657: n = '479h'; break;
-				case 658: n = '479w'; break;
-				case 659: n = '479f'; break;
-				case 660: n = '479s'; break;
-				case 661: n = '479m'; break;
-				case 662: n = '351'; break;
-				case 663: n = '351'; break;
-				case 664: n = '351'; break;
-				case 665: n = '550b'; break;
-				case 666: n = '555d'; break;
-				case 667: n = '648s'; break;
-				case 668: n = '646-w'; break;
-				case 669: n = '646-b'; break;
-				case 670: n = '647-r'; break;
-				case 671: n = '641-s'; break;
-				case 672: n = '642-s'; break;
-				case 673: n = '645-s'; break;
+				case 0: m = 'egg'; break;
+				case 650: m = '386a'; break;
+				case 651: m = '386d'; break;
+				case 652: m = '386s'; break;
+				case 653: m = '413s'; break;
+				case 654: m = '413t'; break;
+				case 655: m = '492s'; break;
+				case 656: m = '487o'; break;
+				case 657: m = '479h'; break;
+				case 658: m = '479w'; break;
+				case 659: m = '479f'; break;
+				case 660: m = '479s'; break;
+				case 661: m = '479m'; break;
+				case 662: m = '351'; break;
+				case 663: m = '351'; break;
+				case 664: m = '351'; break;
+				case 665: m = '550b'; break;
+				case 666: m = '555d'; break;
+				case 667: m = '648s'; break;
+				case 668: m = '646-w'; break;
+				case 669: m = '646-b'; break;
+				case 670: m = '647-r'; break;
+				case 671: m = '641-s'; break;
+				case 672: m = '642-s'; break;
+				case 673: m = '645-s'; break;
 				default:
-					n = (n>9)?n:'0'+n; n = (n>99)?n:'0'+n; //pad 0s
+					m = (n>9)?n:'0'+n; m = (n>99)?n:'0'+n; //pad 0s
 			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-bw/'+(m > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
-			(mode==1 && act >-1?'pokedex-bw/icon/'+n+'.png':'pokedex-bw/evo/'+n+'.png')+'" alt="'+n+'" /></a>';
+			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-bw/'+(n > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			(mode==1 && act >-1?'pokedex-bw/icon/'+m+'.png':'pokedex-bw/evo/'+m+'.png')+'" alt="'+n+'" /></a>';
 			i++;
 		} while(i<l);
 	}, 500);
