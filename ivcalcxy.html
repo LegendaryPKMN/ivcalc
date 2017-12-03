@@ -240,6 +240,7 @@ body {
 	color: #000;
 }
 #calculator #sprite img {
+	/*image-rendering: pixelated;*/
 	max-height: 120px;
 	max-width: 120px;
 }
@@ -310,7 +311,7 @@ body {
 <!--//--><![CDATA[//><!--
 /* Generic functions */
 
-function $() { // http://www.dustindiaz.com/top-ten-javascript/
+function $() {
 	var elements = [];
 	for (var i=0, j=arguments.length; i < j; i++) {
 		var element = arguments[i];
@@ -331,14 +332,14 @@ function $c(classname, node) { //Get elements by class
 		if(re.test(els[i].className))a.push(els[i]);
 	return a;
 }
-function event_add(obj,type,fn) { // http://www.dustindiaz.com
+function event_add(obj,type,fn) {
 	if (obj.addEventListener)	obj.addEventListener(type,fn,false );
 	else if (obj.attachEvent) {
 		obj["e"+type+fn] = fn;
 		obj.attachEvent( "on"+type, function() { obj["e"+type+fn](); } );
 	}
 }
-function event_del(obj,type,fn) { // http://www.dustindiaz.com
+function event_del(obj,type,fn) {
 	if (obj.removeEventListener) obj.removeEventListener(type,fn,false);
 	else if (obj.detachEvent) {
 		obj.detachEvent( "on"+type, obj["e"+type+fn] );
@@ -456,7 +457,7 @@ function array_intersect(a, b) { //arrays must be sorted, a and b are destructed
 	return r;
 }
 if (!Array.prototype.map) {
-	Array.prototype.map = function(fn, thisObj) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.map = function(fn, thisObj) {
 		var scope = thisObj || window;
 		var a = [];
 		for (var i=0, j=this.length; i < j; ++i) {
@@ -466,7 +467,7 @@ if (!Array.prototype.map) {
 	};
 }
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(el, start) { // http://www.dustindiaz.com/basement/sugar-arrays.html
+	Array.prototype.indexOf = function(el, start) {
 		var start = start || 0;
 		for (var i=0, j=this.length; i < j; ++i) { //rewrite using while do?
 			if (this[i] === el ) {
@@ -585,7 +586,7 @@ function online_check() { //Checks if there's an internet connection alive
 		//Version Check - DO NOT change the following
 		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/ivcalcxy.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/ivcalcxy.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'https://legendarypkmn.github.io/ivcalcxy_1.4.1.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/ivcalcxy_20171203.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
@@ -1324,7 +1325,7 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 		$('sprite').innerHTML = '';
 		return false;
 	}
-	alt = {0:'egg',386.1:'386-a',386.2:'386-d',386.3:'386-s',413.1:'413-c',413.2:'413-t',492.1:'492-s',487.1:'487-o',479.1:'479-h',479.2:'479-w',479.3:'479-f',479.4:'479-s',479.5:'479-m',351.1:'351-s',351.2:'351-r',351.3:'351-i',550.1:'550-b',555.1:'555-d',648.1:'648-s',646.1:'646-w',646.2:'646-b',647.1:'647-r',641.1:'641-t',642.1:'642-t',645.1:'645-t',670.1:'678-e',678.1:'678-f',681.1:'681-b',710.1:'710-s',710.2:'710-l',710.3:'710-h',711.1:'711-s',711.2:'711-l',711.3:'711-h',3.1:'003-m',6.1:'006-mx',6.2:'006-my',9.1:'009-m',65.1:'065-m',94.1:'094-m',115.1:'115-m',127.1:'127-m',130.1:'130-m',142.1:'142-m',150.1:'150-mx',150.2:'150-my',181.1:'181-m',212.1:'212-m',214.1:'214-m',229.1:'229-m',248.1:'248-m',257.1:'257-m',282.1:'282-m',303.1:'303-m',306.1:'306-m',308.1:'308-m',310.1:'310-m',354.1:'354-m',359.1:'359-m',380.1:'380-m',381.1:'381-m',445.1:'445-m',448.1:'448-m',460.1:'460-m',15.1:'015-m',18.1:'018-m',80.1:'080-m',208.1:'208-m',254.1:'254-m',260.1:'260-m',302.1:'302-m',319.1:'319-m',323.1:'323-m',334.1:'334-m',362.1:'362-m',373.1:'373-m',376.1:'376-m',382.1:'382-p',383.1:'383-p',384.1:'384-m',428.1:'428-m',475.1:'475-m',531.1:'531-m',719.1:'719-m',720.1:'720-u'};
+	alt = {0:'egg',386.1:'386-a',386.2:'386-d',386.3:'386-s',413.1:'413-c',413.2:'413-t',492.1:'492-s',487.1:'487-o',479.1:'479-h',479.2:'479-w',479.3:'479-f',479.4:'479-s',479.5:'479-m',351.1:'351-s',351.2:'351-r',351.3:'351-i',550.1:'550-b',555.1:'555-d',648.1:'648-s',646.1:'646-w',646.2:'646-b',647.1:'647-r',641.1:'641-s',642.1:'642-s',645.1:'645-s',670.1:'678-e',678.1:'678-f',681.1:'681-b',710.1:'710-s',710.2:'710-l',710.3:'710-h',711.1:'711-s',711.2:'711-l',711.3:'711-h',3.1:'003-m',6.1:'006-mx',6.2:'006-my',9.1:'009-m',65.1:'065-m',94.1:'094-m',115.1:'115-m',127.1:'127-m',130.1:'130-m',142.1:'142-m',150.1:'150-mx',150.2:'150-my',181.1:'181-m',212.1:'212-m',214.1:'214-m',229.1:'229-m',248.1:'248-m',257.1:'257-m',282.1:'282-m',303.1:'303-m',306.1:'306-m',308.1:'308-m',310.1:'310-m',354.1:'354-m',359.1:'359-m',380.1:'380-m',381.1:'381-m',445.1:'445-m',448.1:'448-m',460.1:'460-m',15.1:'015-m',18.1:'018-m',80.1:'080-m',208.1:'208-m',254.1:'254-m',260.1:'260-m',302.1:'302-m',319.1:'319-m',323.1:'323-m',334.1:'334-m',362.1:'362-m',373.1:'373-m',376.1:'376-m',382.1:'382-p',383.1:'383-p',384.1:'384-m',428.1:'428-m',475.1:'475-m',531.1:'531-m',719.1:'719-m',720.1:'720-u'};
 	spr = setTimeout (function() {
 		$('sprite').innerHTML = '';
 		var i=0, l=(mode==1 && act >-1?rs.length:1), result='';
@@ -1343,7 +1344,7 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 				n = '0'+n;
 				m = n;
 			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(m > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(n > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
 			(mode==1 && act >-1?'pokedex-xy/icon/'+m+'.png':'xy/pokemon/'+m+'.png')+'" alt="'+n+'" /></a>';
 			i++;
 		} while(i<l);
@@ -1813,25 +1814,26 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <table><tr><td class="primary">
 <h2 id="toggleinfo">Program information &#177;</h2>
 <div id="info">
-<h3>How to download this calculator</h3>
-<p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
 <h3>Compatible with:</h3>
-<p>Pokémon X, Y, Omega Ruby, Alpha Sapphire for the <em>Nintendo 3DS</em>.</p>
+<p>Pokémon X &amp; Y, Omega Ruby &amp; Alpha Sapphire for the <em>Nintendo 3DS</em>.</p>
 <p>Several Pokémon have had their Base Stats changed in <strong>Pokémon X &amp; Y, Omega Ruby &amp; Alpha Sapphire</strong>; therefore, this calculator is incompatible with previous games. However, you can use the <a href="https://legendarypkmn.github.io/javacalc.html">Advanced Individual Value &amp; Stat Calculator</a> instead.</p>
 <p>In addition, several Pokémon have had their Base Stats changed in <strong>Pokémon Sun &amp; Moon</strong>; therefore, this calculator is incompatible with those games. However, you can use the <a href="https://legendarypkmn.github.io/ivcalcsm.html">Sun &amp; Moon Individual Value &amp; Stat Calculator</a> instead.</p>
-<h3>About</h3>
-<p>This IV Calculator / Stat Calculator / Hidden Power Calculator has been written by <a href="http://heracl.es">Heracles Papatheodorou a.k.a Arty2</a>, webmaster of <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>. It allows the calculation of any Pokémon's Individual Values when given the Pokémon's details.</p>
-<p>It's written in <strong>JavaScript</strong> to ensure cross-system compatibility. It is a small single file download and requires nothing but a browser with JavaScript enabled. It <em>should</em> work flawlessly in Internet Explorer, Opera, Firefox, Chrome and Safari on any system, including the Nintendo 3DS.</p>
-<p>If you want to translate, modify this program or include it in your website, please read the License provided below.</p>
-<p>Documentation and extras can be found on <a href="https://github.com/LegendaryPKMN/ivcalc">this project’s page on GitHub</a>.</p>
+
+<h3>How to download this calculator</h3>
+<p id="download">While in your browser window, go to <strong>File &gt; Save As...</strong> and save this page to your computer. Make sure to select <strong>HTML only</strong> when saving. You can then use it offline whenever you want.</p>
+
+<h3>Credits</h3>
+<p>This tool is maintained collaboratively on <a href="https://github.com/LegendaryPKMN/ivcalc/graphs/contributors">GitHub</a> where further documentation and extras can be found. Originally written for <a href="https://legendarypkmn.net" id="lp">LegendaryPKMN</a>.</p>
 
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
-  <dt>Version 1.4+/ja (11/November/2016)</dt>
-    <dd>Update for Sun/Moon.</dd>
+  <dt>Version 20171203 (03/December/2017)</dt>
+    <dd>Various tweaks and fixes.</dd>
 </dl>
 <dl id="history">
+  <dt>Version 1.4+/ja (11/November/2016)</dt>
+    <dd>Update for Sun/Moon.</dd>
   <dt>Version 1.4 (15/September/2016)</dt>
     <dd>Rebranding for LegendaryPKMN .net.</dd>
   <dt>Version 1.3 (09/September/2016)</dt>
@@ -1848,6 +1850,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 </dl>
 
 <h2>License</h2>
+<p>If you want to translate, modify this program or include it in your website, please read the License provided below. The program's author would be glad if notified about your modifications, including translations.</p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons License</a> and modification of this program's credits is <strong>prohibited</strong>.</p>
 <dl>
 <dt>You are free:</dt>
@@ -1859,8 +1862,6 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <dd><strong>Noncommercial</strong> — You may not use this work for commercial purposes.</dd>
 <dd><strong>Share Alike</strong> — If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.</dd>
 </dl>
-<p>Kudos to <a href="http://www.dustindiaz.com/">Dustin Diaz</a> for some of his amazing functions.</p>
-<p>The program's author would be glad if notified about your modifications, including translations.</p>
 <h2>Disclaimer</h2>
 <p>Pokémon and related characters are &copy; Nintendo, Creatures, Game Freak and Pokémon Inc. This unofficial, fan-made program is not endorsed by any of the above companies.</p>
 </div>
@@ -1868,42 +1869,45 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 </td>
 <td class="secondary">
 <h2 id="toggleinstructions">Instructions &#177;</h2>
-	<div id="instructions">
-	<h3>What are IVs and EPs?</h3>
-		<p>If such terms <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a <a href="https://legendarypkmn.net/training">Pokémon Training Guide</a> before using this tool.</p>
-		<p>Here's some examples: <a href="javascript:code_load('?sc=0,0,1,0,Sepultura! 9,18,22,7,22,8,100! 6,45,129,79,85,106,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1! 6.1,45,129,117,114,125,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1')">Charizard</a>, <a href="javascript:code_load('?sc=0,0,1,0,! 31,6,10,28,6,1,100! 257,85,271,265,144,207,139,168,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257.1,85,271,339,161,238,156,202,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257,85,257,235,132,193,129,141,0,0,0,0,0,0,14,0.1,-1,0,0,3')">Blaziken</a></p>
-	<h3>User Interface</h3>
-	<dl>
-		<dt>Save</dt><dd>Generates a SaveCode and a link (URL) that you can keep in your bookmarks or send to a friend.</dd>
-		<dt>Load</dt><dd>Single click to load the data saved in the URL, or double-click to load any SaveCode.</dd>
-	</dl>
-	<h3>IV Calculation <span class="ext btn" onclick="toggle_simple();">(make it look simpler?)</span></h3>
-		<p>* Fields marked with an asterisk are optional.</p>
-		<p class="center ok">ALWAYS TRACK YOUR EFFORT POINTS!</p>
-		<p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! To reset their Effort Points, feed them as many <em>anti-vitamin</em> berries as necessary, or simply use a <em>Reset Bag</em> in <em>Super Training</em> to erase all their EPs.</p>
-		<p>The <em>Stat Judge</em> can tell you the potential of your Pokémon and the stats with the highest IV. He is located in Kiloude City (X &amp; Y) or the Battle Resort (Omega Ruby &amp; Alpha Sapphire), right inside the Pokémon Center.</p>
-		<p>He will notify you if there's a tie in the highest IV, and he will also notify you of any zero IVs. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
-		<p>You can practically get 100% accurate results at level 20, using just a few Rare Candies; save beforehand if you'd like to keep them of course.</p>
-		<p><strong>Single mode:</strong> The higher your Pokémon's level, the more accurate the results. If you want to calculate a low level one, then input the optional information and additional row data by leveling-up, evolving it or changing forme. The <em>+Lv.</em> and <em>+EPs</em> indicators, tell you how many additional levels or Effort Points (same level) respectively are required to refine the resulting IV spread. Stats of alternate forms and Mega Evolutions can also improve your calculations.</p>
-	<div class="ext">
-		<p><strong>Team mode:</strong> Useful for IV Battles; use this to calculate multiple Pokémon at once. For an IV Battle, gather a team of low level Pokémon and battle with a friend online, forcing them to level 100, then writing down their projected stats.</p>
-		<p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
-	<h3>Stat Calculation</h3><p> Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
-	<h3>Hidden Power Calculation</h3>
-		<p>Hidden Power's type depends on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
-		<p>The <em>Hidden Power psychic</em> lets you know exactly what type Hidden Power will be for a Pokémon. The psychic is located inside the second house to the east of Anistar City's Pokémon Center in X &amp; Y; and the second northern house to the east of Fortree City's Pokémon Center in Omega Ruby &amp; Alpha Sapphire.</p>
-		<p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
-	<h3>EP training tools</h3><dl>
-		<dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
-		<dt>EPs Calculation</dt><dd>Particularly useful to competitive battlers.</dd><dd>First calculate your current Pokémon's stats, alter your current stats in the <em>first row</em>, then use this to view how many EPs are required to reach these specific stats.</dd>
-	</dl>
-	</div>
+<div id="instructions">
+  <h3>About</h3>
+    <p>This calculator allows the reverse calculation of any Pokémon's Individual Values when given the Pokémon's details. It can also calculate stats at any given level and deduce a Pokémon's Hidden Power type and power.</p>
+    <p>If terms such as IVs and EPs <span class="tooltip" title="pun intended">sound Greek</span> to you, then you should read a Pokémon Training Guide before using this tool.</p>
+    <p>Here's some example use cases: <a href="javascript:code_load('?sc=0,0,1,0,Sepultura! 9,18,22,7,22,8,100! 6,45,129,79,85,106,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1! 6.1,45,129,117,114,125,91,107,0,0,0,0,0,0,9,4.2,4,0,2,1')">Charizard</a>, <a href="javascript:code_load('?sc=0,0,1,0,! 31,6,10,28,6,1,100! 257,85,271,265,144,207,139,168,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257.1,85,271,339,161,238,156,202,70,129,59,78,50,124,14,0.1,-1,0,0,3! 257,85,257,235,132,193,129,141,0,0,0,0,0,0,14,0.1,-1,0,0,3')">Blaziken</a></p>
+  <h3>User Interface</h3>
+    <dl>
+      <dt>Save</dt><dd>Generates a SaveCode and a link (URL) that you can keep in your bookmarks or send to a friend.</dd>
+      <dt>Load</dt><dd>Single click to load the data saved in the URL, or double-click to load any SaveCode.</dd>
+    </dl>
+  <h3>IV Calculation <span class="ext btn" onclick="toggle_simple();">(make it look simpler?)</span></h3>
+    <p>* Fields marked with an asterisk are optional.</p>
+    <p class="center ok">ALWAYS TRACK YOUR EFFORT POINTS!</p>
+    <p>Every calculator will return errors if your Pokémon's Effort Points are inaccurate! To reset their Effort Points, feed them as many <em>anti-vitamin</em> berries as necessary, or simply use a <em>Reset Bag</em> in <em>Super Training</em> to erase all their EPs.</p>
+    <p>The <em>Stat Judge</em> can tell you the potential of your Pokémon and the stats with the highest IV. He is located in Kiloude City (X &amp; Y) or the Battle Resort (Omega Ruby &amp; Alpha Sapphire), right inside the Pokémon Center.</p>
+    <p>He will notify you if there's a tie in the highest IV, and he will also notify you of any zero IVs. In regard to the Calculator, you can use the CTRL / CMD key to (de)select multiple stats.</p>
+    <p>You can practically get 100% accurate results at level 20, using just a few Rare Candies; save beforehand if you'd like to keep them of course.</p>
+    <p><strong>Single mode:</strong> The higher your Pokémon's level, the more accurate the results. If you want to calculate a low level one, then input the optional information and additional row data by leveling-up, evolving it or changing forme. The <em>+Lv.</em> and <em>+EPs</em> indicators, tell you how many additional levels or Effort Points (same level) respectively are required to refine the resulting IV spread. Stats of alternate forms and Mega Evolutions can also improve your calculations.</p>
+    <div class="ext">
+    <p><strong>Team mode:</strong> Useful for IV Battles; use this to calculate multiple Pokémon at once. For an IV Battle, gather a team of low level Pokémon and battle with a friend online, forcing them to level 100, then writing down their projected stats.</p>
+    <p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
+  <h3>Stat Calculation</h3>
+    <p>Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
+  <h3>Hidden Power Calculation</h3>
+    <p>Hidden Power's type depends on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
+    <p>The <em>Hidden Power psychic</em> lets you know exactly what type Hidden Power will be for a Pokémon. The psychic is located inside the second house to the east of Anistar City's Pokémon Center in X &amp; Y; and the second northern house to the east of Fortree City's Pokémon Center in Omega Ruby &amp; Alpha Sapphire.</p>
+    <p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
+  <h3>EP training tools</h3>
+    <dl>
+      <dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
+      <dt>EPs Calculation</dt><dd>Particularly useful to competitive battlers.</dd><dd>First calculate your current Pokémon's stats, alter your current stats in the <em>first row</em>, then use this to view how many EPs are required to reach these specific stats.</dd>
+    </dl>
+  </div>
 </div></td>
 </tr>
 <tr><td class="primary">
-Your feedback and criticism is very important! <p class="center">Please <a class="tooltip" id="contact" href="https://legendarypkmn.net/contact?topic=IV%20Calculator" title="Click [Save] before reporting a bug.">contact the author</a> for all errors or requests.</p>
+<p class="center">Your feedback and criticism is very important!<br /><a href="https://github.com/LegendaryPKMN/ivcalc/issues">Please report any bugs or requests on GitHub.</a></p>
 </td>
-<td class="secondary">courtesy of <a href="https://legendarypkmn.net">LegendaryPKMN .net</a>
+<td class="secondary">
 </td></tr>
 </table>
 </div><!-- end documentation -->
