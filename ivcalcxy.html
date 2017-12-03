@@ -1329,23 +1329,22 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 	spr = setTimeout (function() {
 		$('sprite').innerHTML = '';
 		var i=0, l=(mode==1 && act >-1?rs.length:1), result='';
-		do { //logic here needs reworking
-			var n = (mode==1 && act >-1?$('number-'+rs[i]):$('species')).value*1;
-			var m = n;
-			if (alt[n]) {
+		do {
+			var n = (mode==1 && act >-1?$('number-'+rs[i]):$('species')).value*1; // dex number + form indicator
+			var m = Math.floor(n).toString();
+			if (alt[n]) { // use specified sprite for dex number + form indicator
 				m = alt[n];
 			}
-			n = Math.floor(n);
-			if (m < 10) {
-				n = '0'+n;
-				m = n;
+			else { // use default sprite for base dex number, padding number if needed
+				if (n < 10) {
+					m = '0'+m;
+				}
+				if (n < 100) {
+					m = '0'+m;
+				}
 			}
-			if (m < 100) {
-				n = '0'+n;
-				m = n;
-			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(n > 0?n+'.shtml':'')+'"><img src="http://www.serebii.net/'+
-			(mode==1 && act >-1?'pokedex-xy/icon/'+m+'.png':'xy/pokemon/'+m+'.png')+'" alt="'+n+'" /></a>';
+			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(n > 0 ? m.substring(0,3)+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			(mode==1 && act >-1?'pokedex-xy/icon/'+m+'.png':'xy/pokemon/'+m+'.png')+'" alt="'+m.substring(0,3)+'" /></a>';
 			i++;
 		} while(i<l);
 	}, 500);
