@@ -586,7 +586,7 @@ function online_check() { //Checks if there's an internet connection alive
 		//Version Check - DO NOT change the following
 		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/ivcalcxy.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/ivcalcxy.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'https://legendarypkmn.github.io/ivcalcxy_20171130.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/ivcalcxy_20171203.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
@@ -1828,7 +1828,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
-  <dt>Version 20171130 (30/November/2017)</dt>
+  <dt>Version 20171203 (03/December/2017)</dt>
     <dd>Various tweaks and fixes.</dd>
 </dl>
 <dl id="history">
