@@ -13,7 +13,10 @@ This tool was originally written by [Heracles Papatheodorou a.k.a Arty2](http://
 
 ## Version History
 ### Sun & Moon Calculator
-#### Version 20171121
+#### Version 20171203 (03/December/2017)
+* Corrected base stats for Zygarde formes; merged default Zygarde and Zygarde 50% Forme entries, both of which represented the same forme.
+
+#### Version 20171121 (21/November/2017)
 * Updated for Ultra Sun & Ultra Moon, several bug fixes.
 
 #### Version 1+/ja (09/November/2017)
