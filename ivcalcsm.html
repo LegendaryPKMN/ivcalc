@@ -585,7 +585,7 @@ function online_check() { //Checks if there's an internet connection alive
 		//Version Check - DO NOT change the following
 		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/ivcalcsm.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/ivcalcsm.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'https://legendarypkmn.github.io/ivcalcsm_20171203.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/ivcalcsm_20181126.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
@@ -1827,10 +1827,12 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <h2 id="togglehistory">Program History &#177;</h2>
 <p id="version"><span class="loading">Checking online status...</span></p>
 <dl>
-  <dt>Version 20171203 (03/December/2017)</dt>
-    <dd>Corrected base stats for Zygarde formes; merged default Zygarde and Zygarde 50% Forme entries, both of which represented the same forme.</dd>
+  <dt>Version 20181126 (26/November/2018)</dt>
+    <dd>Corrected Special Defense base stat for Alolan Diglett.</dd>
 </dl>
 <dl id="history">
+  <dt>Version 20171203 (03/December/2017)</dt>
+    <dd>Corrected base stats for Zygarde formes; merged default Zygarde and Zygarde 50% Forme entries, both of which represented the same forme.</dd>
   <dt>Version 20171121 (21/November/2017)</dt>
     <dd>Updated for Ultra Sun &amp; Ultra Moon, several bug fixes.</dd>
   <dt>Version 1+/ja (09/November/2017)</dt>
