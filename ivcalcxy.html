@@ -1343,7 +1343,7 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 					m = '0'+m;
 				}
 			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-xy/'+(n > 0 ? m.substring(0,3)+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			$('sprite').innerHTML += '<a href="https://www.serebii.net/pokedex-xy/'+(n > 0 ? m.substring(0,3)+'.shtml':'')+'"><img src="https://www.serebii.net/'+
 			(mode==1 && act >-1?'pokedex-xy/icon/'+m+'.png':'xy/pokemon/'+m+'.png')+'" alt="'+m.substring(0,3)+'" /></a>';
 			i++;
 		} while(i<l);
@@ -1511,10 +1511,10 @@ function initO() { //Actions to perform once the page has loaded
 		display_status('<span class="error">Please set your browser’s encoding to UTF-8 or this tool may not work as expected.</span>');
 	}
 	else if (pk.length != mn.unique().length) {
-		display_status('<span class="error">Calculator data has been corrupted.</span><br>Please use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">original version</a>.</span>');
+		display_status('<span class="error">Calculator data has been corrupted.</span><br/>Please use the <a href="https://legendarypkmn.github.io/ivcalcxy.html">original version</a>.</span>');
 	}
 	else {
-		display_status('Run Without Error.<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>');
+		display_status('Calculator data loaded without errors.<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>');
 	}
 }
 event_add(window,"load", init0);
@@ -1796,7 +1796,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <td id="controls" class="secondary">
 <table>
 <tr>
-<td><input type="button" class="button" id="btn-evs" value="EVs: ON" /></td>
+<td><input type="button" class="button" id="btn-evs" value="EPs: ON" /></td>
 <td><input type="button" class="button" id="btn-theme" value="Theme" /></td>
 <td><input type="button" class="button" id="btn-save" value="Save" /></td>
 <td><input type="button" class="button" id="btn-load" value="Load" /></td>

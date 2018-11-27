@@ -1344,7 +1344,7 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 						m = '0'+m;
 					}
 			}
-			$('sprite').innerHTML += '<a href="http://www.serebii.net/pokedex-bw/'+(n > 0?(n > 649 ? m.substring(0,3): m)+'.shtml':'')+'"><img src="http://www.serebii.net/'+
+			$('sprite').innerHTML += '<a href="https://www.serebii.net/pokedex-bw/'+(n > 0?(n > 649 ? m.substring(0,3): m)+'.shtml':'')+'"><img src="https://www.serebii.net/'+
 			(mode==1 && act >-1?'pokedex-bw/icon/'+m+'.png':'pokedex-bw/evo/'+m+'.png')+'" alt="'+(n > 649 ? m.substring(0,3): m)+'" /></a>';
 			i++;
 		} while(i<l);
@@ -1509,7 +1509,7 @@ function initO() { //Actions to perform once the page has loaded
 	if ((document.charset && document.charset.toLowerCase() != 'utf-8') || (document.characterSet && document.characterSet.toLowerCase() != 'utf-8')) {
 		display_status('<span class="error">Please set your browser’s encoding to UTF-8 or this tool may not work as expected.</span>');
 	}
-	else { display_status('Run Without Error.<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>'); }
+	else { display_status('Calculator data loaded without errors.<br/><span class="btn" onclick="toggle_simple();">Simplify?</span>'); }
 }
 event_add(window,"load", init0);
 //--><!]]>
@@ -1773,7 +1773,7 @@ event_add(window,"load", init0);
 <td id="controls" class="secondary">
 <table>
 <tr>
-<td><input type="button" class="button" id="btn-evs" value="EVs: ON" /></td>
+<td><input type="button" class="button" id="btn-evs" value="EPs: ON" /></td>
 <td><input type="button" class="button" id="btn-theme" value="Theme" /></td>
 <td><input type="button" class="button" id="btn-save" value="Save" /></td>
 <td><input type="button" class="button" id="btn-load" value="Load" /></td>
