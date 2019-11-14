@@ -286,6 +286,10 @@ body {
 .simplex .ext { display: none; }
 /* td { outline: 1px dotted red !important; }  *//* DEBUG */
 
+/* Hidding Hidden Power */
+#hpt, #hiddent, #hiddenp, #btn-hp {
+	visibility: hidden !important;
+}
 </style>
 <style media="print" type="text/css">
 #calculator * {
@@ -309,6 +313,15 @@ body {
 <div id="calculator"> <!-- Start here if you want to include this in your page -->
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
+
+
+/*
+todo:
+- change how previous/next is handled as several Pokemon are missing from SwSh
+- remove redudant Hidden Power functions, currently hidden, see Hidding Hidden Power at CSS
+
+
+*/
 /* Generic functions */
 
 function $() {
@@ -514,7 +527,7 @@ pkmn='            3vv//3.*#< #)SP00).*#< !0sW440.*#< 9νY`)(/;;#AB QBQ0/0;;#AB#V
 pk='00,05,0a,01,04,02,32,3c,03,0f,46,08,0b,41,50,37,28,2d,64,5a,0c,4b,55,06,5f,09,07,0d,10,1e,23,0e,40,69,6e,78,80,11,20,14,30,73,82,19,7d,96,3f,3a,48,3e,44,2c,4e,53,43,34,87,56,4d,4c,8c,2b,38,42,4f,3d,47,2a,49,35,5c,39,3b,45,51,26,5b,4a,29,6c,52,36,a0,31,6b,62,54,c0,91,61,6a,25,24,59,2e,6d,b4,67,2f,57,33,65,63,58,17,27,7b,68,70,18,74,7a,21,1c,5e,a5,aa,1f,22,66,1d,83,81,6f,9a,5d,7e,72,79,e6,c8,1b,76,75,84,60,86,16,7c,71,9b,be,fa,ff,90,a8,8a,85,93,77,b8,7f,9f,af,c2,b9,a4,88,98,8e,89,8b,b5,df,99,84,d8,ad,97,d3,8f,9d,a7'; pk=pk.split(',');
 mn=' !"#$&()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~%αβγδεζηθικλμνξοπρστυφχψωΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩςάέήίόύώϊϋΐàáâãäåæçèéêëìíîïðñòóô'; mn=mn.split(''); base=[];
 
-forms_after = 807;
+forms_after = 890; // this is the last number in the National Dex, 807 in S&M
 forms = {386.1:808,386.2:809,386.3:810,413.1:811,413.2:812,492.1:813,487.1:814,479.1:815,479.2:816,479.3:817,479.4:818,479.5:819,351.1:820,351.2:821,351.3:822,550.1:823,555.1:824,648.1:825,646.1:826,646.2:827,647.1:828,641.1:829,642.1:830,645.1:831,670.1:832,678.1:833,681.1:834,710.1:835,710.2:836,710.3:837,711.1:838,711.2:839,711.3:840,3.1:841,6.1:842,6.2:843,9.1:844,65.1:845,94.1:846,115.1:847,127.1:848,130.1:849,142.1:850,150.1:851,150.2:852,181.1:853,212.1:854,214.1:855,229.1:856,248.1:857,257.1:858,282.1:859,303.1:860,306.1:861,308.1:862,310.1:863,354.1:864,359.1:865,380.1:866,381.1:867,445.1:868,448.1:869,460.1:870,15.1:871,18.1:872,80.1:873,208.1:874,254.1:875,260.1:876,302.1:877,319.1:878,323.1:879,334.1:880,362.1:881,373.1:882,376.1:883,382.1:884,383.1:885,384.1:886,428.1:887,475.1:888,531.1:889,719.1:890,720.1:891,19.1:892,20.1:893,26.1:894,27.1:895,28.1:896,37.1:897,38.1:898,50.1:899,51.1:900,52.1:901,53.1:902,74.1:903,75.1:904,76.1:905,88.1:906,89.1:907,103.1:908,105.1:909,658.1:910,718.1:911,718.2:912,741.1:913,741.2:914,741.3:915,745.1:916,746.1:917,774.1:918,745.2:919,800.1:920,800.2:921,800.3:922};
 
 function get_base(p,s) { //Returns values from pkmn
@@ -1414,7 +1427,7 @@ function display_ivs(rn,plv) { //Displays IVs appropriately
 	}
 	var  i=5; do {
 		if (!$('medl').checked) { $('med'+i+'-0').value = ivs[i][Math.ceil(ivs[i].length/2)-1]; }
-		$('plv'+i+'-0').innerHTML = (plv[i][0] == ''?(ivs[i].length == 1?'<span class="ok">OK!</span>':'<span class="tooltip" title="Refine using Hidden Power.">[?]</span>'):'<span class="btn" onclick="row_add(0,'+plv[i][0]+'); $(\'stat0-\'+(rn-1)).focus();">'+plv[i][0]+'</span>')+(plv[i][2] == ''?'':'<br/><span class="eps">'+plv[i][2]+'</span>');
+		$('plv'+i+'-0').innerHTML = (plv[i][0] == ''?(ivs[i].length == 1?'<span class="ok">OK!</span>':'<!--<span class="tooltip" title="Refine using Hidden Power.">[?]</span>-->'):'<span class="btn" onclick="row_add(0,'+plv[i][0]+'); $(\'stat0-\'+(rn-1)).focus();">'+plv[i][0]+'</span>')+(plv[i][2] == ''?'':'<br/><span class="eps">'+plv[i][2]+'</span>');
 
 		var ivst = ivs[i].slice();
 		if (plv[i][1]<ivst.length) { ivst[plv[i][1]] = ivst[plv[i][1]]+'</span><span class="tooltip" style="font-size: 0.9em;" title="Lv.'+plv[i][0]+' '+stats[i]+': &lt;strong&gt;'+plv[i][4]+'&lt;/strong&gt;">'; }
@@ -1570,7 +1583,7 @@ event_add(window,"load", init0);
 </select></td>
 </tr>
 <tr class="ext"><td colspan="2"><h4>Type:</h4></td><td id="types" colspan="3" class="left"></td><td colspan="2"><h4>Egg Group:</h4></td><td id="eggs" colspan="3" class="left"></td></tr>
-<tr class="ext"><td colspan="7"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt;">Characteristic *</h2></td><td colspan="3"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Hidden Power psychic inside the Pokémon Nursery at Paniola Ranch.">Hidden Power *</h2></td></tr>
+<tr class="ext"><td colspan="7"><h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt;">Characteristic *</h2></td><td colspan="3"><!--<h2 class="tooltip" title="&lt;strong&gt;Optional&lt;/strong&gt; Ask the Hidden Power psychic inside the Pokémon Nursery at Paniola Ranch.">Hidden Power *</h2>--></td></tr>
 <tr class="ext"><td colspan="3"><input type="text" id="charn" name="charn" class="left" /></td><td colspan="4">
 <select id="char" name="char">
 	<option value="-1"> </option>
@@ -1782,9 +1795,9 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <td class="secondary">
 <table><tr><td colspan="8"><h2>Calculated Stats - <span class="btn tooltip" id="btn-statsmin" title="Zero IVs and EPs; hindering nature for all stats.">min</span> / <span class="btn tooltip" id="btn-statsmax" title="Maximum IVs and EPs (unless disabled); beneficial nature for all stats.">max</span></h2></td></tr>
 <tr><td class="top"><h4>Lv.:</h4></td><td class="top"><input type="text"  id="statlvl" name="statlvl" maxlength="3" size="3"/></td><td id="stats0" class="right"></td><td id="stats1" class="right"></td><td id="stats2" class="right"></td><td id="stats3" class="right"></td><td id="stats4" class="right"></td><td id="stats5" class="right"></td></tr></table>
-<table><tr><td colspan="6"><h2>Hidden Power</h2></td></tr>
-<tr><td><h4>Type:</h4></td><td id="hiddent" colspan="5" class="left"></td></tr>
-<tr><td><h4>Power:</h4></td><td id="hiddenp" colspan="5" class="left"></td></tr>
+<table><tr><td colspan="6"><!-- <h2>Hidden Power</h2> --></td></tr>
+<tr><td><!-- <h4>Type:</h4> --></td><td id="hiddent" colspan="5" class="left"></td></tr>
+<tr><td><!-- <h4>Power:</h4> --></td><td id="hiddenp" colspan="5" class="left"></td></tr>
 </table>
 </td></tr>
 
