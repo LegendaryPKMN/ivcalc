@@ -602,7 +602,7 @@ function online_check() { //Checks if there's an internet connection alive
 		//Version Check - DO NOT change the following
 		$('version').innerHTML = '<a href="https://legendarypkmn.github.io/ivcalcswsh.html"><img id="verchk" alt=""/></a><span class="error">Ø</span> <strong>There is a <a href="https://legendarypkmn.github.io/ivcalcswsh.html">newer version</a> available!</strong>';
 		var verchk = $('verchk');
-		verchk.src = 'https://legendarypkmn.github.io/ivcalcswsh_20181126.png?p='+ Math.floor(Math.random( )*100);
+		verchk.src = 'https://legendarypkmn.github.io/ivcalcswsh_20191115.png?p='+ Math.floor(Math.random( )*100);
 		verchk.onload = function() { if (verchk.width==1) { $('version').innerHTML = '<span class="ok">OK!</span> You are using the latest version!'; } }
 	}
 	else { $('version').innerHTML =  '<span class="error">Ø</span> Browser is <strong>offline</strong>! Unable to check for updates.'; }
