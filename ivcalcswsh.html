@@ -290,7 +290,7 @@ body {
 
 /* Hidding Hidden Power */
 #hpt, #hiddent, #hiddenp, #btn-hp {
-	visibility: hidden !important;
+	display: none !important;
 }
 </style>
 <style media="print" type="text/css">
@@ -670,7 +670,7 @@ function toggle_mode(m) { //Single/Team/Row mode
 	switch(m) {
 		case 0:
 			mode = 1;
-			$('btn-mode').value = 'Team Calculation';
+			$('btn-mode').value = 'Mode: Team Calculation';
 			$('mode0').style.display='none';
 			$('mode1').style.display='';
 			$('btn-hp').disabled = 'disabled';
@@ -680,7 +680,7 @@ function toggle_mode(m) { //Single/Team/Row mode
 			break;
 		case 1:
 			mode = 2;
-			$('btn-mode').value = 'Row Calculation';
+			$('btn-mode').value = 'Mode: Row Calculation';
 			$('mode0').style.display='';
 			$('mode1').style.display='none';
 			$('btn-hp').disabled = '';
@@ -689,7 +689,7 @@ function toggle_mode(m) { //Single/Team/Row mode
 			break;
 		default:
 			mode = 0;
-			$('btn-mode').value = 'Single Pokémon';
+			$('btn-mode').value = 'Mode: Single Pokémon';
 			$('mode0').style.display='';
 			$('mode1').style.display='none';
 			$('btn-hp').disabled = '';
@@ -1819,8 +1819,8 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <td><input type="button" class="button" id="btn-save" value="Save" /></td>
 <td><input type="button" class="button" id="btn-load" value="Load" /></td>
 </tr>
-<tr class="ext"><td colspan="2"><input type="button" class="button" id="btn-mode" value="Single Pokémon" /></td><td colspan="2"><input type="button" class="button" id="btn-eps" value="Calculate EPs" /></td></tr>
-<tr class="ext"><td colspan="2"><input type="button" class="button" id="btn-hp" value="Calculate Hidden Power" /></td>
+<tr class="ext"><td colspan="4"><input type="button" class="button" id="btn-mode" value="Mode: Single Pokémon" /></td></tr>
+<tr class="ext"><td colspan="2"><input type="button" class="button" id="btn-hp" value="Calculate Hidden Power" /><input type="button" class="button" id="btn-eps" value="Calculate EPs" /></td>
 <td colspan="2"><input type="button" class="button" id="btn-stats" value="Calculate Stats" /></td></tr>
 <tr><td colspan="4"><input type="button" class="button" id="btn-ivs" value="Calculate Individual Values" /></td></tr>
 </table>
@@ -1832,7 +1832,7 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
 <h2 id="toggleinfo">Program information &#177;</h2>
 <div id="info">
 <h3>Compatible with:</h3>
-<p>Pokémon Sword &amp; Shield, Ultra Sun &amp; Ultra Moon for the <em>Nintendo 3DS</em>. Other calculators:</p>
+<p>Pokémon Sword &amp; Shield, Ultra Sun &amp; Ultra Moon for the <em>Nintendo Switch</em>. Other calculators:</p>
 <ul>
 	<li><a href="https://legendarypkmn.github.io/ivcalcsm.html">Sun &amp; Moon Individual Value &amp; Stat Calculator</a></li>
 	<li><a href="https://legendarypkmn.github.io/ivcalcxy.html">XY Individual Value &amp; Stat Calculator</a></li>
@@ -1898,10 +1898,10 @@ Monooyokuchirasu - Scatters things often - Scatters things often - (HP%5=3)
     <p><strong>Row mode:</strong> Use this to calculate and examine currently selected Pokémon in detail.</p>
   <h3>Stat Calculation</h3>
     <p>Using the <em>median IVs</em>, and input Effort Points, accurately calculates a Pokémon's stats on the given level.</p>
-  <h3>Hidden Power Calculation</h3>
+<!--   <h3>Hidden Power Calculation</h3>
     <p>Hidden Power's type depends on a Pokémon's IVs. If you know its type already, it can help in calculating the IVs.</p>
     <p>The <em>Hidden Power psychic</em> lets you know exactly what type Hidden Power will be for a Pokémon. The psychic is located inside the Pokémon Nursery at Paniola Ranch.</p>
-    <p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p>
+    <p>Using the IV spread (or median IVs if locked) you can calculate all possible combinations.</p> -->
   <h3>EP training tools</h3>
     <dl>
       <dt>EP tracking</dt><dd>Unselect an active row to enable tracking mode, then select the proper item, opponent species and number fought, to calculate the Effort Points gained.</dd>
