@@ -240,9 +240,11 @@ body {
 	color: #000;
 }
 #calculator #sprite img {
-	/*image-rendering: pixelated;*/
+	image-rendering: crisp-edges;
 	max-height: 120px;
-	max-width: 120px;
+	max-width : 120px;
+	height: 80px;
+	width : 80px;
 }
 
 /* SPP Theme */
@@ -1357,8 +1359,8 @@ function display_sprite() { //feel free to modify if you want to serve sprites f
 					m = '0'+m;
 				}
 			}
-			$('sprite').innerHTML += '<a href="https://www.serebii.net/pokedex-sm/'+(n > 0 ? m.substring(0,3)+'.shtml':'')+'"><img src="https://www.serebii.net/'+
-			(mode==1 && act >-1?'pokedex-sm/icon/'+m+'.png':'sunmoon/pokemon/'+m+'.png')+'" alt="'+m.substring(0,3)+'" /></a>';
+			$('sprite').innerHTML += '<a href="https://www.serebii.net/pokedex-swsh/'+(n > 0 ? m.substring(0,3)+'.shtml':'')+'"><img src="https://www.serebii.net/'+
+			(mode==1 && act >-1?'pokedex-swsh/icon/'+m+'.png':'pokedex-swsh/icon/'+m+'.png')+'" alt="'+m.substring(0,3)+'" /></a>';
 			i++;
 		} while(i<l);
 	}, 500);
